@@ -15,6 +15,10 @@ run/main_scene="uid://dssnvfa27bsal"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+GAME_EVENTS="*res://Src/Autoloads/game_events.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

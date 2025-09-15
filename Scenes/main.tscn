@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=4 format=3 uid="uid://dssnvfa27bsal"]
+
+[ext_resource type="Script" uid="uid://de28g8j4cmm7a" path="res://Src/StateMachine/StateMachine.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://dd3e81pkv7rr0" path="res://Src/StateMachine/State.gd" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://brke4uy8khlkt" path="res://Src/StateMachine/StateLabel.gd" id="3_8gbba"]
 
 [node name="Main" type="Node2D"]
+
+[node name="StateMachine" type="Node2D" parent="."]
+position = Vector2(503, 249)
+script = ExtResource("1_bo1nx")
+
+[node name="State1" type="Node" parent="StateMachine"]
+script = ExtResource("2_8gbba")
+metadata/_custom_type_script = "uid://dd3e81pkv7rr0"
+
+[node name="State2" type="Node" parent="StateMachine"]
+script = ExtResource("2_8gbba")
+metadata/_custom_type_script = "uid://dd3e81pkv7rr0"
+
+[node name="State3" type="Node" parent="StateMachine"]
+script = ExtResource("2_8gbba")
+metadata/_custom_type_script = "uid://dd3e81pkv7rr0"
+
+[node name="State4" type="Node" parent="StateMachine"]
+script = ExtResource("2_8gbba")
+metadata/_custom_type_script = "uid://dd3e81pkv7rr0"
+
+[node name="StateLabel" type="Label" parent="StateMachine"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_8gbba")
+metadata/_custom_type_script = "uid://brke4uy8khlkt"
