@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpjsofvwxgkyg"]
+
+[ext_resource type="Script" uid="uid://cfisjtpgivi70" path="res://Scenes/UI/effect_or_cost.gd" id="1_5q6p2"]
+[ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="2_p85od"]
+
+[node name="EffectOrCost" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5q6p2")
+
+[node name="Plus" type="Label" parent="."]
+offset_right = 42.0
+offset_bottom = 23.0
+text = "+"
+
+[node name="Minus" type="Label" parent="."]
+offset_right = 42.0
+offset_bottom = 23.0
+text = "-"
+
+[node name="Value" type="Label" parent="."]
+offset_left = 11.0
+offset_right = 53.0
+offset_bottom = 23.0
+text = "X"
+
+[node name="CaillouImg" type="TextureRect" parent="."]
+offset_left = 26.0
+offset_right = 47.0
+offset_bottom = 21.0
+texture = ExtResource("2_p85od")
+expand_mode = 1
+
+[node name="GazImg" type="TextureRect" parent="."]
+offset_left = 26.0
+offset_right = 47.0
+offset_bottom = 21.0
+texture = ExtResource("2_p85od")
+expand_mode = 1
+
+[node name="FlotteImg" type="TextureRect" parent="."]
+offset_left = 26.0
+offset_right = 47.0
+offset_bottom = 21.0
+texture = ExtResource("2_p85od")
+expand_mode = 1

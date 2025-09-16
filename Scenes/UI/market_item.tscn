@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=3 uid="uid://jphrdc4g8of5"]
+
+[ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="1_ooxxa"]
+[ext_resource type="PackedScene" uid="uid://bpjsofvwxgkyg" path="res://Scenes/UI/effect_or_cost.tscn" id="2_key1k"]
+
+[node name="MarketItem" type="Control"]
+custom_minimum_size = Vector2(202, 277)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -77.5
+offset_right = -1718.0
+offset_bottom = -880.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.321569)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 203.0
+offset_bottom = 277.0
+texture = ExtResource("1_ooxxa")
+metadata/_edit_lock_ = true
+
+[node name="LaPlanete" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 31.0
+offset_right = 167.0
+offset_bottom = 159.0
+texture = ExtResource("1_ooxxa")
+
+[node name="BtnBuy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 229.0
+offset_right = 132.0
+offset_bottom = 260.0
+text = "Buy"
+metadata/_edit_lock_ = true
+
+[node name="NamePlanete" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 8.0
+offset_right = 156.0
+offset_bottom = 31.0
+text = "Planete biduel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Effects" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 158.0
+offset_right = 65.0
+offset_bottom = 198.0
+
+[node name="Label" type="Label" parent="Effects"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 23.0
+text = "Effect per turn :"
+metadata/_edit_lock_ = true
+
+[node name="EffectOrCost" parent="Effects" instance=ExtResource("2_key1k")]
+offset_left = 6.0
+offset_top = 20.0
+offset_right = 6.0
+offset_bottom = 20.0
+
+[node name="EffectOrCost2" parent="Effects" instance=ExtResource("2_key1k")]
+visible = false
+offset_left = 56.0
+offset_top = 20.0
+offset_right = 56.0
+offset_bottom = 20.0
+
+[node name="EffectOrCost3" parent="Effects" instance=ExtResource("2_key1k")]
+visible = false
+offset_left = 105.0
+offset_top = 20.0
+offset_right = 105.0
+offset_bottom = 20.0
+
+[node name="Costs" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 201.0
+offset_right = 63.0
+offset_bottom = 241.0
+
+[node name="Label" type="Label" parent="Costs"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Cost :"
+metadata/_edit_lock_ = true
+
+[node name="EffectOrCost" parent="Costs" instance=ExtResource("2_key1k")]
+offset_left = 43.0
+offset_top = 7.0
+offset_right = 43.0
+offset_bottom = 7.0
+
+[node name="EffectOrCost2" parent="Costs" instance=ExtResource("2_key1k")]
+offset_left = 139.0
+offset_top = 7.0
+offset_right = 139.0
+offset_bottom = 7.0
+
+[node name="EffectOrCost3" parent="Costs" instance=ExtResource("2_key1k")]
+offset_left = 91.0
+offset_top = 7.0
+offset_right = 91.0
+offset_bottom = 7.0
