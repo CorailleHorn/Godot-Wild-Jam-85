@@ -1,3 +1,3 @@
 extends Node
 # Place global signals here :
-signal health_depleted
+signal buy_planet(planet: PlanetResource, position: Vector2)
