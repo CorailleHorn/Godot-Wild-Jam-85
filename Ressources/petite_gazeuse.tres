@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="planet_resource" load_steps=3 format=3 uid="uid://cpk78n3ov6jdt"]
+[gd_resource type="Resource" script_class="PlanetResource" load_steps=3 format=3 uid="uid://cpk78n3ov6jdt"]
 
 [ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_urrbt"]
 [ext_resource type="Texture2D" uid="uid://llqyt6bkvl0q" path="res://Assets/planetes/petite_gazeuse.png" id="1_vv7l6"]
