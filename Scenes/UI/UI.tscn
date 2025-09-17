@@ -52,14 +52,17 @@ grow_horizontal = 2
 grow_vertical = 0
 columns = 3
 
-[node name="MarketItem" parent="UI/Market" instance=ExtResource("1_s86y4")]
+[node name="MarketItem1" parent="UI/Market" instance=ExtResource("1_s86y4")]
 layout_mode = 2
+market_slot = 1
 
 [node name="MarketItem2" parent="UI/Market" instance=ExtResource("1_s86y4")]
 layout_mode = 2
+market_slot = 2
 
 [node name="MarketItem3" parent="UI/Market" instance=ExtResource("1_s86y4")]
 layout_mode = 2
+market_slot = 3
 
 [node name="ResourcesBar" type="Control" parent="UI"]
 layout_mode = 1
