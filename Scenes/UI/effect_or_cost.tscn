@@ -15,6 +15,7 @@ offset_bottom = 23.0
 text = "+"
 
 [node name="Minus" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 42.0
 offset_bottom = 23.0
@@ -36,6 +37,7 @@ texture = ExtResource("2_p85od")
 expand_mode = 1
 
 [node name="GazImg" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
@@ -44,6 +46,7 @@ texture = ExtResource("2_p85od")
 expand_mode = 1
 
 [node name="FlotteImg" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0

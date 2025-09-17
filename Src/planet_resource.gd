@@ -1,4 +1,4 @@
-class_name planet_resource
+class_name PlanetResource
 extends Resource
 
 

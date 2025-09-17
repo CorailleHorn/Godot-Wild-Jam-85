@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 GAME_EVENTS="*res://Src/Autoloads/game_events.gd"
+PLANET_CONSTANTS="*res://Src/Constants/planet_constants.gd"
 
 [display]
 
