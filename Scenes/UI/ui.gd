@@ -49,9 +49,7 @@ func _on_update_gaz(value:int):
 
 
 func _on_setting_btn_button_down() -> void:
-	#TODO : afficher une interface avec possibilité de reload la game, retourner au menutruc comme ça
-	pass # Replace with function body.
-
+	get_tree().reload_current_scene()
 
 func _on_caillou_mouse_entered() -> void:
 	GAME_EVENTS.show_tooltips.emit("Rocks",true)
