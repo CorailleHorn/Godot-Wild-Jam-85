@@ -10,7 +10,20 @@ func _ready() -> void:
 	$Market/MarketItem.set_planet(planet)
 	$Market/MarketItem2.set_planet(planet2)
 	$Market/MarketItem3.set_planet(planet3)
+	
+	GAME_EVENTS.update_caillou.connect(_on_update_caillou)
+	GAME_EVENTS.update_flotte.connect(_on_update_flotte)
+	GAME_EVENTS.update_gaz.connect(_on_update_gaz)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _on_update_caillou(value:int):
+	$ResourcesBar/Resources/ValueCaillou.text = str(value)
+
+func _on_update_flotte(value:int):
+	$ResourcesBar/Resources/ValueFlotte.text = str(value)
+
+func _on_update_gaz(value:int):
+	$ResourcesBar/Resources/ValueGaz.text = str(value)

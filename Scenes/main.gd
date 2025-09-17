@@ -1,8 +1,17 @@
 extends Node2D
 @export_group("Ressources")
-@export var caillou: int = 0
-@export var gaz: int = 0
-@export var flotte: int = 0
+@export var caillou: int = 0 :
+	set(value):
+		caillou = value
+		GAME_EVENTS.update_caillou.emit(caillou)
+@export var gaz: int = 0 :
+	set(value):
+		gaz = value
+		GAME_EVENTS.update_gaz.emit(gaz)
+@export var flotte: int = 0 :
+	set(value):
+		flotte = value
+		GAME_EVENTS.update_flotte.emit(flotte)
 
 @export_group("Stats par tour")
 @export var caillou_par_tour: int = 2
@@ -20,10 +29,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$CanvasLayer/UI/ResourcesBar/Resources/ValueCaillou.text = str(caillou)
-	$CanvasLayer/UI/ResourcesBar/Resources/ValueFlotte.text = str(flotte)
-	$CanvasLayer/UI/ResourcesBar/Resources/ValueGaz.text = str(gaz)
-	
 	pass
 
 
@@ -42,3 +47,4 @@ func _on_GAME_EVENTS_buy_planet(planet: PlanetResource, position: Vector2) -> vo
 	caillou_par_tour += planet.effect_caillou
 	gaz_par_tour += planet.effect_gaz
 	flotte_par_tour += planet.effect_flotte
+	
