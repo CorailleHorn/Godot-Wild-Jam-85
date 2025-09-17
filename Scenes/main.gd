@@ -20,6 +20,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$CanvasLayer/UI/ResourcesBar/Resources/ValueCaillou.text = str(caillou)
+	$CanvasLayer/UI/ResourcesBar/Resources/ValueFlotte.text = str(flotte)
+	$CanvasLayer/UI/ResourcesBar/Resources/ValueGaz.text = str(gaz)
+	
 	pass
 
 

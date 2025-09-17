@@ -59,20 +59,20 @@ offset_right = 662.0
 offset_bottom = 214.0
 texture = ExtResource("4_oqha6")
 
-[node name="GridContainer" type="GridContainer" parent="UI/ResourcesBar"]
+[node name="Resources" type="GridContainer" parent="UI/ResourcesBar"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 109.0
-offset_right = 564.0
-offset_bottom = 173.0
+offset_left = 171.0
+offset_top = 110.0
+offset_right = 565.0
+offset_bottom = 174.0
 columns = 6
 
-[node name="Caillou" type="TextureRect" parent="UI/ResourcesBar/GridContainer"]
+[node name="Caillou" type="TextureRect" parent="UI/ResourcesBar/Resources"]
 layout_mode = 2
 texture = ExtResource("3_b83rk")
 stretch_mode = 2
 
-[node name="ValueCaillou" type="Label" parent="UI/ResourcesBar/GridContainer"]
+[node name="ValueCaillou" type="Label" parent="UI/ResourcesBar/Resources"]
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 theme = SubResource("Theme_b83rk")
@@ -81,12 +81,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gaz" type="TextureRect" parent="UI/ResourcesBar/GridContainer"]
+[node name="Gaz" type="TextureRect" parent="UI/ResourcesBar/Resources"]
 layout_mode = 2
 texture = ExtResource("5_7tgkj")
 stretch_mode = 2
 
-[node name="ValueGaz" type="Label" parent="UI/ResourcesBar/GridContainer"]
+[node name="ValueGaz" type="Label" parent="UI/ResourcesBar/Resources"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
@@ -94,12 +94,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Flotte" type="TextureRect" parent="UI/ResourcesBar/GridContainer"]
+[node name="Flotte" type="TextureRect" parent="UI/ResourcesBar/Resources"]
 layout_mode = 2
 texture = ExtResource("6_jevvu")
 stretch_mode = 2
 
-[node name="ValueFlotte" type="Label" parent="UI/ResourcesBar/GridContainer"]
+[node name="ValueFlotte" type="Label" parent="UI/ResourcesBar/Resources"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
