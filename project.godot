@@ -25,6 +25,10 @@ PLANET_CONSTANTS="*res://Src/Constants/planet_constants.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[gui]
+
+theme/custom_font="uid://g78vg5pu0aa4"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
