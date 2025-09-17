@@ -27,3 +27,8 @@ func _on_update_flotte(value:int):
 
 func _on_update_gaz(value:int):
 	$ResourcesBar/Resources/ValueGaz.text = str(value)
+
+
+func _on_setting_btn_button_down() -> void:
+	#TODO : afficher une interface avec possibilité de reload la game, retourner au menutruc comme ça
+	pass # Replace with function body.
