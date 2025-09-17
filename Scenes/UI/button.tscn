@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl2uxfwseys1r"]
+
+[ext_resource type="Texture2D" uid="uid://sn80yrulfokg" path="res://Assets/UI/btn_background.png" id="1_760b5"]
+[ext_resource type="Script" uid="uid://bxex2ntxlv2xu" path="res://Scenes/UI/button.gd" id="1_rtysa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of6vi"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_760b5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3ehy"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_760b5")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njgq2"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_760b5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36k38"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_760b5")
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_hover_pressed_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_colors/font_hover_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_colors/font_outline_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_colors/font_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.054902, 0.0705882, 0.176471, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_of6vi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3ehy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_njgq2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_36k38")
+text = "btn Label"
+script = ExtResource("1_rtysa")
+
+[node name="BtnClic" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

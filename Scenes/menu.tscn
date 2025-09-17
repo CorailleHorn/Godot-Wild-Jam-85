@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://5m5ar27e8hje"]
+
+[ext_resource type="PackedScene" uid="uid://dl2uxfwseys1r" path="res://Scenes/UI/button.tscn" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://cx5gl58xpp1c2" path="res://Scenes/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://dbjfthmmho1im" path="res://Assets/85-Theme.png" id="3_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://llqyt6bkvl0q" path="res://Assets/planetes/petite_gazeuse.png" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="5_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="6_6swd7"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 1082.0
+color = Color(0.054902, 0.0705882, 0.176471, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 195.0
+offset_right = 543.0
+offset_bottom = 222.0
+scale = Vector2(7.01981, 7.01981)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 26
+text = "Universe Game"
+
+[node name="StartButton" parent="." instance=ExtResource("1_1rerr")]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 445.0
+offset_right = 1021.0
+offset_bottom = 502.0
+scale = Vector2(1.39314, 1.39314)
+text = "Play the game"
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 603.0
+offset_right = 618.0
+offset_bottom = 762.0
+scale = Vector2(1.94973, 1.94973)
+bbcode_enabled = true
+text = "[b]Game for the Godot Wild Jam 85[/b]
+
+by Coraille_Horn & Gigi.Lili
+
+Theme: Expansion
+Limitations: none used"
+
+[node name="theme" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 840.0
+offset_right = 2995.0
+offset_bottom = 1610.0
+scale = Vector2(0.178377, 0.178377)
+texture = ExtResource("3_jsrd8")
+
+[node name="planete" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1291.0
+offset_top = 771.0
+offset_right = 1504.0
+offset_bottom = 984.0
+texture = ExtResource("4_wbdvm")
+
+[node name="planete2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1222.0
+offset_top = 601.0
+offset_right = 1350.0
+offset_bottom = 729.0
+texture = ExtResource("5_q3rjx")
+
+[node name="planete3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1548.0
+offset_top = 327.0
+offset_right = 2141.0
+offset_bottom = 920.0
+texture = ExtResource("6_6swd7")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
