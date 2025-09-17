@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
-[ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="1_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://csnuoqgcgs0iu" path="res://Assets/universe_gwj_85.png" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://coxtaamc2uajc" path="res://Scenes/UI/UI.tscn" id="5_kry3j"]
 
 [node name="Main" type="Node2D"]
@@ -16,7 +16,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sun" type="Sprite2D" parent="."]
 position = Vector2(948, 469)
-texture = ExtResource("1_jjvhh")
+texture = ExtResource("3_jjvhh")
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_kry3j")]
