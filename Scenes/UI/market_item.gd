@@ -17,12 +17,12 @@ func set_planet(value: PlanetResource) -> void:
 		$Center/Button.disabled = false
 		$Center/LaPlanete.texture = planet.image
 		$NamePlanete.text = planet.name
-		$Effects/EffectOrCost.set_values(false, planet.cost_caillou, "Caillou")
-		$Effects/EffectOrCost2.set_values(false, planet.cost_gaz, "Gaz")
-		$Effects/EffectOrCost3.set_values(false, planet.cost_flotte, "Flotte")
-		$Costs/EffectOrCost.set_values(true, planet.effect_caillou, "Caillou")
-		$Costs/EffectOrCost2.set_values(true, planet.effect_gaz, "Gaz")
-		$Costs/EffectOrCost3.set_values(true, planet.effect_flotte, "Flotte")
+		$Effects/EffectOrCost.set_values(false, planet.effect_caillou, "Caillou")
+		$Effects/EffectOrCost2.set_values(false, planet.effect_gaz, "Gaz")
+		$Effects/EffectOrCost3.set_values(false, planet.effect_flotte, "Flotte")
+		$Costs/EffectOrCost.set_values(true, planet.cost_caillou, "Caillou")
+		$Costs/EffectOrCost2.set_values(true, planet.cost_gaz, "Gaz")
+		$Costs/EffectOrCost3.set_values(true, planet.cost_flotte, "Flotte")
 	else:
 		$Center/Button.disabled = true
 		$Center/LaPlanete.texture = null
