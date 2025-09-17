@@ -18,6 +18,10 @@ func _ready() -> void:
 	$Market/MarketItem1.set_planet(get_next_market_item())
 	$Market/MarketItem2.set_planet(get_next_market_item())
 	$Market/MarketItem3.set_planet(get_next_market_item())
+
+	GAME_EVENTS.update_caillou.connect(_on_update_caillou)
+	GAME_EVENTS.update_flotte.connect(_on_update_flotte)
+	GAME_EVENTS.update_gaz.connect(_on_update_gaz)
 	
 func can_afford(planet: PlanetResource) -> bool:
 	return main_node.caillou >= planet.cost_caillou &&  main_node.gaz >= planet.cost_gaz &&  main_node.flotte >= planet.cost_flotte
@@ -33,3 +37,12 @@ func get_next_market_item() -> PlanetResource:
 
 func _on_GAME_EVENTS_add_new_market_item(market_slot: int) -> void:
 	get_node("Market/MarketItem" + str(market_slot)).set_planet(get_next_market_item())
+
+func _on_update_caillou(value:int):
+	$ResourcesBar/Resources/ValueCaillou.text = str(value)
+
+func _on_update_flotte(value:int):
+	$ResourcesBar/Resources/ValueFlotte.text = str(value)
+
+func _on_update_gaz(value:int):
+	$ResourcesBar/Resources/ValueGaz.text = str(value)

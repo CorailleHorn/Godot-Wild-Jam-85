@@ -1,9 +1,18 @@
 class_name Main
 extends Node2D
 @export_group("Ressources")
-@export var caillou: int = 0
-@export var gaz: int = 0
-@export var flotte: int = 0
+@export var caillou: int = 0 :
+	set(value):
+		caillou = value
+		GAME_EVENTS.update_caillou.emit(caillou)
+@export var gaz: int = 0 :
+	set(value):
+		gaz = value
+		GAME_EVENTS.update_gaz.emit(gaz)
+@export var flotte: int = 0 :
+	set(value):
+		flotte = value
+		GAME_EVENTS.update_flotte.emit(flotte)
 
 @export_group("Stats par tour")
 @export var caillou_par_tour: int = 2
