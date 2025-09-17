@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://coxtaamc2uajc"]
+[gd_scene load_steps=14 format=3 uid="uid://coxtaamc2uajc"]
 
 [ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
 [ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
@@ -9,8 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://b27dc3c10rved" path="res://Assets/resources/resource_flotte.png" id="6_jevvu"]
 [ext_resource type="Texture2D" uid="uid://cmh1vrl1ms3td" path="res://Assets/UI/quest_background.png" id="7_jevvu"]
 [ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="8_w8wei"]
+[ext_resource type="Texture2D" uid="uid://d1xyq5brd8hoi" path="res://Assets/UI/tooltips_bakcground.png" id="10_nqsl3"]
+[ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
 
 [sub_resource type="Theme" id="Theme_b83rk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thdbn"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("10_nqsl3")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -221,4 +230,32 @@ offset_top = 1.216
 offset_right = 111.752
 offset_bottom = 88.216
 
+[node name="Tooltips" type="PanelContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 41.0
+scale = Vector2(2.09258, 2.09258)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_thdbn")
+script = ExtResource("11_u6hof")
+
+[node name="Content" type="RichTextLabel" parent="UI/Tooltips"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.97, 0.97, 0.97, 1)
+theme_override_constants/outline_size = 1
+bbcode_enabled = true
+text = "here is the tooltips"
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_exited"]
 [connection signal="button_down" from="UI/Setting/setting_btn" to="UI" method="_on_setting_btn_button_down"]

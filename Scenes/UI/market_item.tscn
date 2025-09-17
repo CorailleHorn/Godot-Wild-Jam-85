@@ -126,5 +126,7 @@ offset_top = 90.0
 offset_right = -7.0
 offset_bottom = 90.0
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="button_down" from="Center/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Center/Button" to="." method="_on_button_button_up"]

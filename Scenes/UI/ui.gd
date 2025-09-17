@@ -51,3 +51,26 @@ func _on_update_gaz(value:int):
 func _on_setting_btn_button_down() -> void:
 	#TODO : afficher une interface avec possibilité de reload la game, retourner au menutruc comme ça
 	pass # Replace with function body.
+
+
+func _on_caillou_mouse_entered() -> void:
+	GAME_EVENTS.show_tooltips.emit("Rocks",true)
+
+func _on_caillou_mouse_exited() -> void:
+	GAME_EVENTS.show_tooltips.emit("Rocks",false)
+
+
+func _on_gaz_mouse_entered() -> void:
+	GAME_EVENTS.show_tooltips.emit("Gas",true)
+
+
+func _on_gaz_mouse_exited() -> void:
+	GAME_EVENTS.show_tooltips.emit("Gas",false)
+
+
+func _on_flotte_mouse_entered() -> void:
+	GAME_EVENTS.show_tooltips.emit("Liquid",true)
+
+
+func _on_flotte_mouse_exited() -> void:
+	GAME_EVENTS.show_tooltips.emit("Liquid",false)
