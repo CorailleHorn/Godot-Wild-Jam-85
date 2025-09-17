@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="planet_resource" load_steps=2 format=3 uid="uid://24v0rjlrieuu"]
+
+[ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_03xhq"]
+
+[resource]
+script = ExtResource("1_03xhq")
+name = "Petite Rocheuse"
+cost_caillou = 1
+cost_gaz = 0
+cost_flotte = 0
+effect_caillou = 1
+effect_gaz = 0
+effect_flotte = 0
+metadata/_custom_type_script = "uid://c544ak0vrxto3"
