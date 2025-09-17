@@ -1,3 +1,4 @@
+class_name Main
 extends Node2D
 @export_group("Ressources")
 @export var caillou: int = 0
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_GAME_EVENTS_buy_planet(planet: PlanetResource, position: Vector2) -> void:
+func _on_GAME_EVENTS_buy_planet(market_slot: int, planet: PlanetResource, position: Vector2) -> void:
 	var new_planet = Sprite2D.new()
 	new_planet.texture = planet.image
 	new_planet.global_position = position
@@ -38,3 +39,5 @@ func _on_GAME_EVENTS_buy_planet(planet: PlanetResource, position: Vector2) -> vo
 	caillou_par_tour += planet.effect_caillou
 	gaz_par_tour += planet.effect_gaz
 	flotte_par_tour += planet.effect_flotte
+	
+	GAME_EVENTS.add_new_market_item.emit(market_slot)
