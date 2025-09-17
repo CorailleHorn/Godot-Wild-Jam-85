@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpjsofvwxgkyg"]
+[gd_scene load_steps=5 format=3 uid="uid://bpjsofvwxgkyg"]
 
 [ext_resource type="Script" uid="uid://cfisjtpgivi70" path="res://Scenes/UI/effect_or_cost.gd" id="1_5q6p2"]
-[ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="2_p85od"]
+[ext_resource type="Texture2D" uid="uid://c6f1e3j7bcdua" path="res://Assets/resources/resource_caillou.png" id="2_bt3qu"]
+[ext_resource type="Texture2D" uid="uid://cb4htkbjfcrwr" path="res://Assets/resources/resource_gaz.png" id="3_3ylqr"]
+[ext_resource type="Texture2D" uid="uid://b27dc3c10rved" path="res://Assets/resources/resource_flotte.png" id="4_odid5"]
 
 [node name="EffectOrCost" type="Control"]
 layout_mode = 3
@@ -26,14 +28,19 @@ layout_mode = 0
 offset_left = 11.0
 offset_right = 53.0
 offset_bottom = 23.0
+scale = Vector2(1.3743, 1.3743)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
 text = "X"
 
 [node name="CaillouImg" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 26.0
-offset_right = 47.0
-offset_bottom = 21.0
-texture = ExtResource("2_p85od")
+offset_left = 29.0
+offset_top = -4.0
+offset_right = 50.0
+offset_bottom = 17.0
+scale = Vector2(1.33525, 1.33525)
+texture = ExtResource("2_bt3qu")
 expand_mode = 1
 
 [node name="GazImg" type="TextureRect" parent="."]
@@ -42,7 +49,7 @@ layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
 offset_bottom = 21.0
-texture = ExtResource("2_p85od")
+texture = ExtResource("3_3ylqr")
 expand_mode = 1
 
 [node name="FlotteImg" type="TextureRect" parent="."]
@@ -51,5 +58,5 @@ layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
 offset_bottom = 21.0
-texture = ExtResource("2_p85od")
+texture = ExtResource("4_odid5")
 expand_mode = 1
