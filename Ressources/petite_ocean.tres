@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="planet_resource" load_steps=3 format=3 uid="uid://lbeeuev648qs"]
+
+[ext_resource type="Texture2D" uid="uid://qymb0dom87md" path="res://Assets/planetes/petite_ocean.png" id="1_3wcht"]
+[ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_x0mf7"]
+
+[resource]
+script = ExtResource("1_x0mf7")
+name = "Small Ocean"
+image = ExtResource("1_3wcht")
+cost_caillou = 0
+cost_gaz = 0
+cost_flotte = 1
+effect_caillou = 0
+effect_gaz = 0
+effect_flotte = 1
+metadata/_custom_type_script = "uid://c544ak0vrxto3"
