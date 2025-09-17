@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="planet_resource" load_steps=2 format=3 uid="uid://24v0rjlrieuu"]
+[gd_resource type="Resource" script_class="planet_resource" load_steps=3 format=3 uid="uid://24v0rjlrieuu"]
 
 [ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_03xhq"]
+[ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="1_87p40"]
 
 [resource]
 script = ExtResource("1_03xhq")
-name = "Petite Rocheuse"
+name = "Small Rocky"
+image = ExtResource("1_87p40")
 cost_caillou = 1
 cost_gaz = 0
 cost_flotte = 0
