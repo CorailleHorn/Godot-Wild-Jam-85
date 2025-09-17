@@ -9,22 +9,26 @@ anchors_preset = 0
 script = ExtResource("1_5q6p2")
 
 [node name="Plus" type="Label" parent="."]
+layout_mode = 0
 offset_right = 42.0
 offset_bottom = 23.0
 text = "+"
 
 [node name="Minus" type="Label" parent="."]
+layout_mode = 0
 offset_right = 42.0
 offset_bottom = 23.0
 text = "-"
 
 [node name="Value" type="Label" parent="."]
+layout_mode = 0
 offset_left = 11.0
 offset_right = 53.0
 offset_bottom = 23.0
 text = "X"
 
 [node name="CaillouImg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
 offset_bottom = 21.0
@@ -32,6 +36,7 @@ texture = ExtResource("2_p85od")
 expand_mode = 1
 
 [node name="GazImg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
 offset_bottom = 21.0
@@ -39,6 +44,7 @@ texture = ExtResource("2_p85od")
 expand_mode = 1
 
 [node name="FlotteImg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 26.0
 offset_right = 47.0
 offset_bottom = 21.0

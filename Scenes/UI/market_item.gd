@@ -16,15 +16,19 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	# drag
+	print("int")
 	dragging = true
 	dragged_object = TextureRect.new()
 	dragged_object.texture = $Center/LaPlanete.texture
-	dragged_object.global_position = get_global_mouse_position()
-	add_child(dragged_object)
-	offset = get_global_mouse_position() - global_position
+	dragged_object.position = $Center/LaPlanete.position
+	$Center.add_child(dragged_object)
+	offset = get_global_mouse_position() - dragged_object.position
 
 func _on_button_button_up() -> void:
 	# si on achète
 	# si on achète pas
+	print("out")
 	dragging = false
+	$Center.remove_child(dragged_object)
+	dragged_object.queue_free()
 	
