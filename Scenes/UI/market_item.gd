@@ -6,6 +6,8 @@ var dragging: bool = false
 var offset: Vector2 = Vector2(0,0)
 var dragged_object: TextureRect = null
 
+var rect_market: Rect2 = Rect2()
+
 func set_planet(value: PlanetResource) -> void:
 	planet = value
 	$Center/LaPlanete.texture = planet.image
@@ -19,6 +21,9 @@ func set_planet(value: PlanetResource) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var market: GridContainer = get_parent()
+	await market.ready
+	rect_market = Rect2(market.position, market.size)
 	pass # Replace with function body.
 
 
@@ -30,23 +35,22 @@ func _process(delta: float) -> void:
 
 func _on_button_button_down() -> void:
 	# drag
-	print("int")
 	dragging = true
 	dragged_object = TextureRect.new()
-	dragged_object.texture = $Center/LaPlanete.texture
+	dragged_object.texture = planet.image
 	dragged_object.position = $Center/LaPlanete.position
 	$Center.add_child(dragged_object)
 	offset = get_global_mouse_position() - dragged_object.position
 
 func _on_button_button_up() -> void:
-	# si on achète
-	# si on achète pas
-	print("out")
 	dragging = false
-	var new_planet = Sprite2D.new()
-	new_planet.texture = dragged_object.texture
-	new_planet.global_position = dragged_object.get_screen_position() + Vector2(64,64)
-	get_tree().get_root().add_child(new_planet)
+	# si on achète
+	if(!rect_market.has_point(get_global_mouse_position())):
+		GAME_EVENTS.buy_planet.emit(planet, dragged_object.get_screen_position() + Vector2(64,64))
+		print("bought")
+	# si on achète pas
+	else:
+		print("not bought")
 	$Center.remove_child(dragged_object)
 	dragged_object.queue_free()
 	
