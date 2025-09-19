@@ -8,6 +8,9 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
 camera_speed = 1200.0
+caillou_par_tour = 5
+gaz_par_tour = 6
+flotte_par_tour = 6
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(822, 492)

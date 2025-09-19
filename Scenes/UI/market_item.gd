@@ -73,7 +73,7 @@ func _on_button_button_up() -> void:
 	dragging = false
 	# si on achète
 	if(!rect_market.has_point(get_global_mouse_position())):
-		GAME_EVENTS.buy_planet.emit(market_slot, planet, dragged_object.get_screen_position() + Vector2(64,64))
+		GAME_EVENTS.buy_planet.emit(market_slot, planet, get_viewport().get_camera_2d().get_target_position() + dragged_object.get_screen_position() + Vector2(64,64))
 		print("bought")
 	# si on achète pas
 	else:
