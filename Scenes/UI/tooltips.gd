@@ -24,5 +24,5 @@ func toggle(msg: String,on: bool):
 func tween_opacity(to:float):
 	if opacity_tween: opacity_tween.kill()
 	opacity_tween = get_tree().create_tween()
-	opacity_tween.tween_property(self,'modulate:a', to,0.3)
+	opacity_tween.tween_property(self,'modulate:a',to,0.3)
 	return opacity_tween

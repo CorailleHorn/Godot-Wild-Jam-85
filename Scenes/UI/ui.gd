@@ -1,4 +1,6 @@
 extends Control
+@onready var btn_clic: AudioStreamPlayer = $BtnClic
+
 
 var planet_array = [
 	preload(PLANET_CONSTANTS.PetiteRocheuse),
@@ -39,6 +41,8 @@ func _on_GAME_EVENTS_add_new_market_item(market_slot: int) -> void:
 	get_node("Market/MarketItem" + str(market_slot)).set_planet(get_next_market_item())
 
 func _on_update_caillou(value:int):
+	var dif = value - int($ResourcesBar/Resources/ValueCaillou.text) 
+	print("dif "+str(dif))
 	$ResourcesBar/Resources/ValueCaillou.text = str(value)
 
 func _on_update_flotte(value:int):
@@ -47,28 +51,19 @@ func _on_update_flotte(value:int):
 func _on_update_gaz(value:int):
 	$ResourcesBar/Resources/ValueGaz.text = str(value)
 
-
 func _on_setting_btn_button_down() -> void:
+	btn_clic.play(0)
 	get_tree().reload_current_scene()
 
 func _on_caillou_mouse_entered() -> void:
 	GAME_EVENTS.show_tooltips.emit("Rocks",true)
-
 func _on_caillou_mouse_exited() -> void:
 	GAME_EVENTS.show_tooltips.emit("Rocks",false)
-
-
 func _on_gaz_mouse_entered() -> void:
 	GAME_EVENTS.show_tooltips.emit("Gas",true)
-
-
 func _on_gaz_mouse_exited() -> void:
 	GAME_EVENTS.show_tooltips.emit("Gas",false)
-
-
 func _on_flotte_mouse_entered() -> void:
 	GAME_EVENTS.show_tooltips.emit("Liquid",true)
-
-
 func _on_flotte_mouse_exited() -> void:
 	GAME_EVENTS.show_tooltips.emit("Liquid",false)

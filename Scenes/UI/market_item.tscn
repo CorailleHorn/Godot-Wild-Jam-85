@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://jphrdc4g8of5"]
+[gd_scene load_steps=6 format=3 uid="uid://jphrdc4g8of5"]
 
 [ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="1_ooxxa"]
 [ext_resource type="Script" uid="uid://cdjxbkq67u6uy" path="res://Scenes/UI/market_item.gd" id="1_thwpj"]
 [ext_resource type="Texture2D" uid="uid://dftjth7g4jq1x" path="res://Assets/UI/market_item_back.png" id="2_g5gcv"]
 [ext_resource type="PackedScene" uid="uid://bpjsofvwxgkyg" path="res://Scenes/UI/effect_or_cost.tscn" id="2_key1k"]
+[ext_resource type="AudioStream" uid="uid://or5y01mlhkmk" path="res://Assets/sounds/bunch_planet_sounds.mp3" id="5_slgo4"]
 
 [node name="MarketItem" type="Control"]
 custom_minimum_size = Vector2(300, 320)
@@ -125,6 +126,9 @@ offset_left = -7.0
 offset_top = 90.0
 offset_right = -7.0
 offset_bottom = 90.0
+
+[node name="DragPlanet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_slgo4")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

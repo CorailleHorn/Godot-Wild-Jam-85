@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wild Jam 85"
-run/main_scene="uid://dssnvfa27bsal"
+run/main_scene="uid://5m5ar27e8hje"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 GAME_EVENTS="*res://Src/Autoloads/game_events.gd"
 PLANET_CONSTANTS="*res://Src/Constants/planet_constants.gd"
+AudioController="*res://Scenes/AudioController.tscn"
 
 [display]
 

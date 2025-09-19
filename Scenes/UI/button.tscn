@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl2uxfwseys1r"]
+[gd_scene load_steps=8 format=3 uid="uid://dl2uxfwseys1r"]
 
 [ext_resource type="Texture2D" uid="uid://sn80yrulfokg" path="res://Assets/UI/btn_background.png" id="1_760b5"]
 [ext_resource type="Script" uid="uid://bxex2ntxlv2xu" path="res://Scenes/UI/button.gd" id="1_rtysa"]
+[ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="3_of6vi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of6vi"]
 content_margin_left = 24.0
@@ -54,5 +55,6 @@ text = "btn Label"
 script = ExtResource("1_rtysa")
 
 [node name="BtnClic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_of6vi")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

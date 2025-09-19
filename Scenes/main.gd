@@ -41,6 +41,8 @@ func _on_GAME_EVENTS_buy_planet(market_slot: int, planet: PlanetResource, positi
 	new_planet.texture = planet.image
 	new_planet.global_position = position
 	add_child(new_planet)
+	# TODO:anim : tween + sound
+	
 	
 	# apply cost
 	caillou -= planet.cost_caillou

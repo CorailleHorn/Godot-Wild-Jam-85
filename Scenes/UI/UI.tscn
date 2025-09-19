@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://coxtaamc2uajc"]
+[gd_scene load_steps=16 format=3 uid="uid://coxtaamc2uajc"]
 
 [ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
 [ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cb4htkbjfcrwr" path="res://Assets/resources/resource_gaz.png" id="5_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://b27dc3c10rved" path="res://Assets/resources/resource_flotte.png" id="6_jevvu"]
 [ext_resource type="Texture2D" uid="uid://cmh1vrl1ms3td" path="res://Assets/UI/quest_background.png" id="7_jevvu"]
-[ext_resource type="Texture2D" uid="uid://e0hvarrj26gx" path="res://Assets/icon.svg" id="8_w8wei"]
+[ext_resource type="Texture2D" uid="uid://x3bmi3bcrh11" path="res://Assets/UI/icone_replay.png" id="9_u6hof"]
 [ext_resource type="Texture2D" uid="uid://d1xyq5brd8hoi" path="res://Assets/UI/tooltips_bakcground.png" id="10_nqsl3"]
 [ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
+[ext_resource type="Texture2D" uid="uid://bipxd6g30j33i" path="res://Assets/UI/control_tuto.png" id="12_u6hof"]
+[ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="13_thdbn"]
 
 [sub_resource type="Theme" id="Theme_b83rk"]
 
@@ -214,7 +216,7 @@ offset_left = 23.692
 offset_top = 18.072
 offset_right = 88.692
 offset_bottom = 74.072
-texture = ExtResource("8_w8wei")
+texture = ExtResource("9_u6hof")
 expand_mode = 1
 
 [node name="setting_btn" type="Button" parent="UI/Setting"]
@@ -251,6 +253,24 @@ bbcode_enabled = true
 text = "here is the tooltips"
 fit_content = true
 autowrap_mode = 0
+
+[node name="ControlTutorial" type="Control" parent="UI"]
+anchors_preset = 0
+offset_top = 284.0
+offset_right = 303.0
+offset_bottom = 436.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControlTutorial"]
+layout_mode = 0
+offset_left = 90.0
+offset_right = 819.0
+offset_bottom = 444.0
+scale = Vector2(0.383844, 0.383844)
+texture = ExtResource("12_u6hof")
+stretch_mode = 2
+
+[node name="BtnClic" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("13_thdbn")
 
 [connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]

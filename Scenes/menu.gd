@@ -3,8 +3,7 @@ extends Control
 
 
 func _ready() -> void:
-	# TODO : add audio controller ici
-	pass # Replace with function body.
+	AudioController.play_music()
 
 
 func _on_start_button_pressed() -> void:
