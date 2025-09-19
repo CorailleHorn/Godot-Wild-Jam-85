@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
+	print("in")
 	if(cannot_afford(planet)):
 		print("could not buy !")
 		return
@@ -68,6 +69,7 @@ func _on_button_button_down() -> void:
 	_play_drag_planet()
 
 func _on_button_button_up() -> void:
+	print("out")
 	if(dragging == false):
 		return
 	dragging = false
@@ -86,14 +88,18 @@ func cannot_afford(planet: PlanetResource) -> bool:
 	
 
 func _on_mouse_entered() -> void:
-	if(cannot_afford(planet)):
+	if(planet == null):
+		return
+	elif(cannot_afford(planet)):
 		GAME_EVENTS.show_tooltips.emit("Not enough resources",true)
 	else:
 		$background.texture = texture_hover
 	
 
 func _on_mouse_exited() -> void:
-	if(cannot_afford(planet)):
+	if(planet == null):
+		return
+	elif(cannot_afford(planet)):
 		GAME_EVENTS.show_tooltips.emit("Not enough resources",false)
 	$background.texture = texture_normal
 

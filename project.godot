@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wild Jam 85"
-run/main_scene="uid://5m5ar27e8hje"
+run/main_scene="uid://7udqhy65jfam"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -25,6 +25,10 @@ AudioController="*res://Scenes/AudioController.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="Wild Jam 85"
 
 [gui]
 
