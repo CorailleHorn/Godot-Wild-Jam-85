@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmh1vrl1ms3td" path="res://Assets/UI/quest_background.png" id="7_jevvu"]
 [ext_resource type="Texture2D" uid="uid://x3bmi3bcrh11" path="res://Assets/UI/icone_replay.png" id="9_u6hof"]
 [ext_resource type="Texture2D" uid="uid://d1xyq5brd8hoi" path="res://Assets/UI/tooltips_bakcground.png" id="10_nqsl3"]
-[ext_resource type="Script" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
+[ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
 [ext_resource type="Texture2D" uid="uid://bipxd6g30j33i" path="res://Assets/UI/control_tuto.png" id="12_u6hof"]
 [ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="13_thdbn"]
 
