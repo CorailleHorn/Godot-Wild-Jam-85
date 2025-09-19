@@ -1,9 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=16 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://csnuoqgcgs0iu" path="res://Assets/universe_gwj_85.png" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://rh66khwjaug8" path="res://Assets/particules/part_sun_1.png" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://coxtaamc2uajc" path="res://Scenes/UI/UI.tscn" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://duw4hehy7vgfv" path="res://Assets/particules/part_sun_4.png" id="6_21xkr"]
+
+[sub_resource type="Curve" id="Curve_6bp64"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.500844), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_344ge"]
+curve = SubResource("Curve_6bp64")
+
+[sub_resource type="CurveTexture" id="CurveTexture_21xkr"]
+
+[sub_resource type="Curve" id="Curve_344ge"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.236667, 1), 0.0, 0.0, 0, 0, Vector2(0.495, -1), 0.0, 0.0, 0, 0, Vector2(0.755, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_ynf5e"]
+curve = SubResource("Curve_344ge")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_21xkr"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 62.0
+emission_ring_inner_radius = 58.0
+emission_ring_cone_angle = 90.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 17.8
+radial_velocity_curve = SubResource("CurveTexture_ynf5e")
+gravity = Vector3(0, 0, 0)
+radial_accel_curve = SubResource("CurveTexture_21xkr")
+scale_min = 0.4
+scale_max = 1.2
+emission_curve = SubResource("CurveTexture_344ge")
+
+[sub_resource type="Curve" id="Curve_hptm8"]
+_data = [Vector2(0, 0.515471), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d1ilt"]
+curve = SubResource("Curve_hptm8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d1ilt"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 46.0
+emission_ring_inner_radius = 40.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -3.0
+radial_accel_max = 4.0
+scale_curve = SubResource("CurveTexture_d1ilt")
+emission_curve = SubResource("CurveTexture_344ge")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -16,12 +74,6 @@ flotte_par_tour = 6
 position = Vector2(822, 492)
 scale = Vector2(1.76852, 1.76852)
 texture = ExtResource("2_jjvhh")
-
-[node name="Sun" type="Sprite2D" parent="."]
-position = Vector2(948, 469)
-scale = Vector2(1.86904, 1.86904)
-texture = ExtResource("3_jjvhh")
-metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_kry3j")]
 
@@ -40,3 +92,26 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="SunGroup" type="Node2D" parent="."]
+
+[node name="RedParticules" type="GPUParticles2D" parent="SunGroup"]
+position = Vector2(962, 469)
+scale = Vector2(1.86904, 1.86904)
+amount = 12
+texture = ExtResource("3_kry3j")
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_21xkr")
+
+[node name="Sun" type="Sprite2D" parent="SunGroup"]
+position = Vector2(948, 469)
+scale = Vector2(1.86904, 1.86904)
+texture = ExtResource("3_jjvhh")
+metadata/_edit_lock_ = true
+
+[node name="YellowParticules" type="GPUParticles2D" parent="SunGroup"]
+position = Vector2(948, 469)
+scale = Vector2(1.86904, 1.86904)
+texture = ExtResource("6_21xkr")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_d1ilt")
