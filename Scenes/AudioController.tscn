@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlvndnrrt28h1"]
+[gd_scene load_steps=3 format=3 uid="uid://v6stdt8x71gf"]
 
-[ext_resource type="Script" uid="uid://6f8mb6fkwd1e" path="res://Scenes/audio_controller.gd" id="1_87mnv"]
+[ext_resource type="Script" path="res://Scenes/audio_controller.gd" id="1_87mnv"]
 [ext_resource type="AudioStream" uid="uid://bcp4iqca3m26t" path="res://Assets/sounds/music_1.mp3" id="2_le7vc"]
 
 [node name="AudioController" type="Node"]
