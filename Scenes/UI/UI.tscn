@@ -276,6 +276,7 @@ stream = ExtResource("13_thdbn")
 [node name="ResourcesMore" type="AudioStreamPlayer" parent="UI"]
 
 [node name="ResourcesLess" type="AudioStreamPlayer" parent="UI"]
+
 [node name="BlackVeil" type="ColorRect" parent="UI"]
 visible = false
 layout_mode = 1
@@ -324,6 +325,7 @@ text = "Well done"
 
 [node name="LabelYouLose" type="Label" parent="UI/FinalBox"]
 visible = false
+layout_mode = 0
 offset_left = 822.0
 offset_top = 367.0
 offset_right = 1144.0
