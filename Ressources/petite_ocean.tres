@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_x0mf7")
-name = "Small Ocean"
+name = "Small Oceanic"
 image = ExtResource("1_3wcht")
 cost_caillou = 0
 cost_gaz = 0

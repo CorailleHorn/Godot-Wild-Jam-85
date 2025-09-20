@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlanetResource" load_steps=3 format=3 uid="uid://dt8pnbdxr7yr3"]
+
+[ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="1_nv835"]
+[ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_ydomb"]
+
+[resource]
+script = ExtResource("1_ydomb")
+name = "Icy"
+image = ExtResource("1_nv835")
+cost_caillou = 0
+cost_gaz = 0
+cost_flotte = 2
+effect_caillou = 1
+effect_gaz = 0
+effect_flotte = 1
+metadata/_custom_type_script = "uid://c544ak0vrxto3"
