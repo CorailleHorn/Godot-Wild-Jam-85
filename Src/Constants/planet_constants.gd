@@ -1,7 +1,17 @@
 extends Node
 
 const PetiteRocheuse: String = "uid://24v0rjlrieuu"
-const Magmatique: String = "uid://3ffy1qam13xf" 
 const PetiteGazeuse: String = "uid://cpk78n3ov6jdt" 
 const PetiteOcean: String = "uid://lbeeuev648qs"
+const Magmatique: String = "uid://3ffy1qam13xf" 
 const Tempetueuse: String = "uid://dvj11orsqjyw5"
+const Glaciaire: String = "uid://dt8pnbdxr7yr3"
+const MoyRocheuse: String = "uid://dkxoogkdx5hy2"
+const MoyGazeuse: String = "uid://bchnwrbis26l6"
+const MoyOcean: String = "uid://brxuj2d414ph6"
+const VivanteRocheuse: String = "uid://d0v608vcvcf7w"
+const Metallique: String = "uid://b4oyu78w7cvjv"
+const VivanteOcean: String = "uid://dhj0m13iuc3n1"
+const GeanteRocheuse: String = "uid://bib4ga7tfl413"
+const GeanteGazeuse: String = "uid://dn5tsf3w621fs"
+const GeanteOcean: String = "uid://c24lvilmtelv3"

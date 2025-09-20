@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlanetResource" load_steps=3 format=3 uid="uid://dhj0m13iuc3n1"]
+
+[ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="1_cam84"]
+[ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_e6mad"]
+
+[resource]
+script = ExtResource("1_e6mad")
+name = "Habitable Oceanic"
+image = ExtResource("1_cam84")
+cost_caillou = 0
+cost_gaz = 1
+cost_flotte = 3
+effect_caillou = 0
+effect_gaz = 2
+effect_flotte = 2
+metadata/_custom_type_script = "uid://c544ak0vrxto3"

@@ -13,7 +13,17 @@ var planet_array = [
 	preload(PLANET_CONSTANTS.PetiteGazeuse),
 	preload(PLANET_CONSTANTS.PetiteOcean),
 	preload(PLANET_CONSTANTS.Magmatique),
-	preload(PLANET_CONSTANTS.Tempetueuse)
+	preload(PLANET_CONSTANTS.Tempetueuse),
+	preload(PLANET_CONSTANTS.Glaciaire),
+	preload(PLANET_CONSTANTS.MoyRocheuse),
+	preload(PLANET_CONSTANTS.MoyGazeuse),
+	preload(PLANET_CONSTANTS.MoyOcean),
+	preload(PLANET_CONSTANTS.VivanteRocheuse),
+	preload(PLANET_CONSTANTS.Metallique),
+	preload(PLANET_CONSTANTS.VivanteOcean),
+	preload(PLANET_CONSTANTS.GeanteRocheuse),
+	preload(PLANET_CONSTANTS.GeanteGazeuse),
+	preload(PLANET_CONSTANTS.GeanteOcean)
 ]
 var main_node: Main = null
 
