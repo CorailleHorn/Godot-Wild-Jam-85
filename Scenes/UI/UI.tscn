@@ -168,6 +168,7 @@ scale = Vector2(1.23538, 1)
 texture = ExtResource("7_jevvu")
 
 [node name="Resources" type="GridContainer" parent="UI/QuestBar"]
+layout_mode = 0
 offset_left = -27.8853
 offset_top = 89.0
 offset_right = 715.115
