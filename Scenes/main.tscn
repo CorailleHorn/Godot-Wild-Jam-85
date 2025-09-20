@@ -1,11 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=21 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
-[ext_resource type="Texture2D" uid="uid://csnuoqgcgs0iu" path="res://Assets/universe_gwj_85.png" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://clhx3lkuoemju" path="res://Assets/universe_gwj_85_naked.png" id="2_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="3_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://rh66khwjaug8" path="res://Assets/particules/part_sun_1.png" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://coxtaamc2uajc" path="res://Scenes/UI/UI.tscn" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://duw4hehy7vgfv" path="res://Assets/particules/part_sun_4.png" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bynffjdnpxtfc" path="res://Scenes/elements/universe_stars.tscn" id="7_6bp64"]
+[ext_resource type="Texture2D" uid="uid://cy0f40pbobivg" path="res://Assets/particules/universe_particule_blue.png" id="8_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dmxpwcrj5jqyl" path="res://Assets/particules/universe_particule_white.png" id="9_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://c1wuirmapm0vd" path="res://Assets/particules/universe_particule_pink.png" id="10_6iyac"]
 
 [sub_resource type="Curve" id="Curve_6bp64"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.500844), 0.0, 0.0, 0, 0]
@@ -76,7 +80,8 @@ camera_speed = 1200.0
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(822, 492)
 scale = Vector2(1.76852, 1.76852)
-texture = ExtResource("2_jjvhh")
+texture = ExtResource("2_hptm8")
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_kry3j")]
 
@@ -118,3 +123,261 @@ scale = Vector2(1.86904, 1.86904)
 texture = ExtResource("6_21xkr")
 lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_d1ilt")
+
+[node name="UniverseParticules" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Stars" type="Node2D" parent="UniverseParticules"]
+
+[node name="UniverseStars" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-51, 236)
+
+[node name="UniverseStars2" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-559, 485)
+
+[node name="UniverseStars3" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(245, 468)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars4" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-419, 1119)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars5" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-111, 1160)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars6" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1489, 1504)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars7" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1673, 1471)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars8" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1875, 1468)
+scale = Vector2(0.653332, 0.653332)
+
+[node name="UniverseStars9" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1728, 1570)
+scale = Vector2(1.09333, 1.09333)
+
+[node name="UniverseStars10" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(2318, 1299)
+scale = Vector2(0.626887, 0.626887)
+
+[node name="UniverseStars11" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(2290, 852)
+scale = Vector2(0.840381, 0.840381)
+
+[node name="UniverseStars12" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1968, -130)
+scale = Vector2(0.840381, 0.840381)
+
+[node name="UniverseStars13" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1167, 663)
+scale = Vector2(0.840381, 0.840381)
+
+[node name="UniverseStars14" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(689, 395)
+scale = Vector2(0.840381, 0.840381)
+
+[node name="UniverseStars15" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(923, 265)
+scale = Vector2(0.631831, 0.631831)
+anim = "scale"
+
+[node name="UniverseStars16" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1707, -311)
+scale = Vector2(0.631831, 0.631831)
+
+[node name="UniverseStars17" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1798, -344)
+scale = Vector2(0.859372, 0.859372)
+
+[node name="UniverseStars18" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(1885, -385)
+scale = Vector2(0.859372, 0.859372)
+
+[node name="UniverseStars19" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(563, -379)
+scale = Vector2(1.7794, 1.7794)
+
+[node name="UniverseStars20" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-202, -505)
+scale = Vector2(1.7794, 1.7794)
+
+[node name="UniverseStars21" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(-621, 990)
+scale = Vector2(1.7794, 1.7794)
+
+[node name="UniverseStars22" parent="UniverseParticules/Stars" instance=ExtResource("7_6bp64")]
+position = Vector2(328, 1497)
+scale = Vector2(1.7794, 1.7794)
+
+[node name="BlueBrumes" type="Node2D" parent="UniverseParticules"]
+
+[node name="UniverseStars" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(-666, 188)
+scale = Vector2(2.04, 2.04)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars7" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(1837, -228)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars8" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(107, 1331)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars2" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(315, 230)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars3" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(691, 621)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars4" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(1587, 791)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars5" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(1811, 687)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars6" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2012, 678)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars9" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2244, 730)
+scale = Vector2(0.15999, 0.15999)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+
+[node name="UniverseStars10" parent="UniverseParticules/BlueBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2000, -23)
+scale = Vector2(3.76578, 1.73609)
+texture = ExtResource("8_hptm8")
+anim = "scale"
+metadata/_edit_lock_ = true
+
+[node name="WhitePoints" type="Node2D" parent="UniverseParticules"]
+
+[node name="UniverseStars" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(-220, 102)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars2" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(-462, 35)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars3" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(380, 549)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars4" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(812, 412)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars5" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(942, 329)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars6" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(-300, 978)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars7" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(174, 1272)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars8" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(520, 1149)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars9" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(1610, 1035)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars10" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(1843, 864)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars11" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(2133, 1183)
+texture = ExtResource("9_d1ilt")
+
+[node name="UniverseStars12" parent="UniverseParticules/WhitePoints" instance=ExtResource("7_6bp64")]
+position = Vector2(1171, -126)
+texture = ExtResource("9_d1ilt")
+
+[node name="PinkBrumes" type="Node2D" parent="UniverseParticules"]
+
+[node name="UniverseStars" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(20, 105)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars2" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(229, 1033)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars3" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(-426, 346)
+scale = Vector2(-2.68, -2.68)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars4" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(-362, -371)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars5" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(361, -280)
+rotation = 2.84069
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars6" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(-342, 1510)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars7" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(1355, 1385)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars8" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2197, 1228)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars9" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2290, 1126)
+texture = ExtResource("10_6iyac")
+anim = "scale"
+
+[node name="UniverseStars10" parent="UniverseParticules/PinkBrumes" instance=ExtResource("7_6bp64")]
+position = Vector2(2186, -259)
+scale = Vector2(4.2984, 5.27988)
+texture = ExtResource("10_6iyac")
+anim = "scale"

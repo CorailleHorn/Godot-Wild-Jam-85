@@ -272,6 +272,10 @@ stretch_mode = 2
 [node name="BtnClic" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("13_thdbn")
 
+[node name="ResourcesMore" type="AudioStreamPlayer" parent="UI"]
+
+[node name="ResourcesLess" type="AudioStreamPlayer" parent="UI"]
+
 [connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
 [connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_entered"]
