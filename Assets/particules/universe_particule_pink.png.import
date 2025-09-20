@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhx3lkuoemju"
-path="res://.godot/imported/universe_gwj_85_naked.png-63ceb9cae9f00e0384e62c8d0e05820f.ctex"
+uid="uid://c1wuirmapm0vd"
+path="res://.godot/imported/universe_particule_pink.png-e9cec81293ea16159fe1e625a20c12eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/universe_gwj_85_naked.png"
-dest_files=["res://.godot/imported/universe_gwj_85_naked.png-63ceb9cae9f00e0384e62c8d0e05820f.ctex"]
+source_file="res://Assets/particules/universe_particule_pink.png"
+dest_files=["res://.godot/imported/universe_particule_pink.png-e9cec81293ea16159fe1e625a20c12eb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhx3lkuoemju"
-path="res://.godot/imported/universe_gwj_85_naked.png-63ceb9cae9f00e0384e62c8d0e05820f.ctex"
+uid="uid://dmxpwcrj5jqyl"
+path="res://.godot/imported/universe_particule_white.png-f51732d2923bfff7fd76e87ce50ffc72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/universe_gwj_85_naked.png"
-dest_files=["res://.godot/imported/universe_gwj_85_naked.png-63ceb9cae9f00e0384e62c8d0e05820f.ctex"]
+source_file="res://Assets/particules/universe_particule_white.png"
+dest_files=["res://.godot/imported/universe_particule_white.png-f51732d2923bfff7fd76e87ce50ffc72.ctex"]
 
 [params]
 
