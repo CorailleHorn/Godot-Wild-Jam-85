@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://coxtaamc2uajc"]
+[gd_scene load_steps=18 format=3 uid="uid://coxtaamc2uajc"]
 
 [ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
 [ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
@@ -13,7 +13,8 @@
 [ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
 [ext_resource type="Texture2D" uid="uid://bipxd6g30j33i" path="res://Assets/UI/control_tuto.png" id="12_u6hof"]
 [ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="13_thdbn"]
-[ext_resource type="Texture2D" uid="uid://djru4kp3tmy5k" path="res://Assets/UI/bg.png" id="14_o3jj0"]
+[ext_resource type="Texture2D" uid="uid://cyhby5ro6t02n" path="res://Assets/UI/square_background.png" id="14_jeqmb"]
+[ext_resource type="PackedScene" uid="uid://bynffjdnpxtfc" path="res://Scenes/elements/universe_stars.tscn" id="15_2yjmo"]
 
 [sub_resource type="Theme" id="Theme_b83rk"]
 
@@ -302,15 +303,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 10880.0
-offset_bottom = 6120.0
+offset_left = 499.0
+offset_top = 160.0
+offset_right = -467.0
+offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.15, 0.15)
 
 [node name="TextureRect" type="TextureRect" parent="UI/FinalBox/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("14_o3jj0")
+texture = ExtResource("14_jeqmb")
 
 [node name="LabelYouWin" type="Label" parent="UI/FinalBox"]
 layout_mode = 0
@@ -352,6 +354,38 @@ offset_right = 1081.0
 offset_bottom = 665.0
 theme_override_font_sizes/font_size = 35
 text = "Go to Menu"
+
+[node name="Node2D" type="Node2D" parent="UI/FinalBox"]
+
+[node name="UniverseStars" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(760, 487)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars2" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(710, 395)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars3" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1291, 419)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars4" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1168, 345)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars5" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1182, 434)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars6" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(805, 379)
+min_timer = 1.0
+max_timer = 2.0
 
 [connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
