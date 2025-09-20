@@ -16,9 +16,18 @@ extends Node2D
 		GAME_EVENTS.update_flotte.emit(flotte)
 
 @export_group("Stats par tour")
-@export var caillou_par_tour: int = 2
-@export var gaz_par_tour: int = 2
-@export var flotte_par_tour: int = 1
+@export var caillou_par_tour: int = 2 :
+	set(value):
+		caillou_par_tour = value
+		GAME_EVENTS.update_caillou_par_tour.emit(caillou_par_tour)
+@export var gaz_par_tour: int = 2 :
+	set(value):
+		gaz_par_tour = value
+		GAME_EVENTS.update_gaz_par_tour.emit(gaz_par_tour)
+@export var flotte_par_tour: int = 1:
+	set(value):
+		flotte_par_tour = value
+		GAME_EVENTS.update_flotte_par_tour.emit(flotte_par_tour)
 
 const STARS = preload("res://Assets/particules/stars.png")
 const SPAWN_PARTICULES = preload("res://Scenes/elements/spawn_particules.tscn")
@@ -37,6 +46,7 @@ var placed_planet: int = 0 :
 			placed_planet = 0
 		else:
 			placed_planet = value
+		GAME_EVENTS.update_planet_remaining.emit(3 - placed_planet)
 			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

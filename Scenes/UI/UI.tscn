@@ -178,21 +178,21 @@ columns = 10
 [node name="Label" type="Label" parent="UI/QuestBar/Resources"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Next turn in  "
+text = "Next turn in "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextTurns" type="Label" parent="UI/QuestBar/Resources"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "0"
+text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/QuestBar/Resources"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "planets:  "
+text = " planets:  "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -206,7 +206,7 @@ custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 theme = SubResource("Theme_b83rk")
 theme_override_font_sizes/font_size = 42
-text = "0"
+text = "+0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -219,7 +219,7 @@ stretch_mode = 2
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
-text = "0"
+text = "+0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -232,7 +232,7 @@ stretch_mode = 2
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
-text = "0"
+text = "+0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
