@@ -71,26 +71,28 @@ texture = ExtResource("3_jsrd8")
 
 [node name="planete" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1291.0
-offset_top = 771.0
-offset_right = 1504.0
-offset_bottom = 984.0
+offset_left = 1428.0
+offset_top = 695.0
+offset_right = 1641.0
+offset_bottom = 908.0
 texture = ExtResource("4_wbdvm")
 
 [node name="planete2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1222.0
-offset_top = 601.0
-offset_right = 1350.0
-offset_bottom = 729.0
+offset_left = 1359.0
+offset_top = 525.0
+offset_right = 1487.0
+offset_bottom = 653.0
 texture = ExtResource("5_q3rjx")
 
 [node name="planete3" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1548.0
 offset_top = 327.0
 offset_right = 2141.0
 offset_bottom = 920.0
+scale = Vector2(0.360002, 0.360002)
 texture = ExtResource("6_6swd7")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

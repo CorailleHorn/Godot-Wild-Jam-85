@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bynffjdnpxtfc"]
+
+[ext_resource type="Script" uid="uid://q77i5f17wu5j" path="res://universe_stars.gd" id="1_pfrpk"]
+[ext_resource type="Texture2D" uid="uid://dmj34geudbjes" path="res://Assets/particules/stars.png" id="2_u7uon"]
+
+[node name="UniverseStars" type="Node2D"]
+script = ExtResource("1_pfrpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u7uon")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

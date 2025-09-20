@@ -273,6 +273,10 @@ stretch_mode = 2
 [node name="BtnClic" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("13_thdbn")
 
+[node name="ResourcesMore" type="AudioStreamPlayer" parent="UI"]
+
+[node name="ResourcesLess" type="AudioStreamPlayer" parent="UI"]
+
 [node name="BlackVeil" type="ColorRect" parent="UI"]
 visible = false
 layout_mode = 1

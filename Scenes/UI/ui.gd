@@ -1,6 +1,12 @@
 extends Control
 @onready var btn_clic: AudioStreamPlayer = $BtnClic
+@onready var resources_more: AudioStreamPlayer = $ResourcesMore
+@onready var resources_less: AudioStreamPlayer = $ResourcesLess
 
+
+@onready var label_caillou: Label = $ResourcesBar/Resources/ValueCaillou
+@onready var label_gaz: Label = $ResourcesBar/Resources/ValueGaz
+@onready var label_flotte: Label = $ResourcesBar/Resources/ValueFlotte
 
 var planet_array = [
 	preload(PLANET_CONSTANTS.PetiteRocheuse),
@@ -70,15 +76,28 @@ func _on_GAME_EVENTS_add_new_market_item(market_slot: int) -> void:
 	
 
 func _on_update_caillou(value:int):
-	var dif = value - int($ResourcesBar/Resources/ValueCaillou.text) 
-	print("dif "+str(dif))
-	$ResourcesBar/Resources/ValueCaillou.text = str(value)
+	var dif = value - int(label_caillou.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_caillou,dif)	
+	# update le label value
+	label_caillou.text = str(value)
 
 func _on_update_flotte(value:int):
-	$ResourcesBar/Resources/ValueFlotte.text = str(value)
+	var dif = value - int(label_flotte.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_flotte,dif)	
+	# update le label value
+	label_flotte.text = str(value)
 
 func _on_update_gaz(value:int):
-	$ResourcesBar/Resources/ValueGaz.text = str(value)
+	var dif = value - int(label_gaz.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_gaz,dif)	
+	# update le label value
+	label_gaz.text = str(value)
 
 func _on_setting_btn_button_down() -> void:
 	btn_clic.play(0)
@@ -97,6 +116,36 @@ func _on_flotte_mouse_entered() -> void:
 func _on_flotte_mouse_exited() -> void:
 	GAME_EVENTS.show_tooltips.emit("Liquid",false)
 
+func resources_update_feedback(label_base: Label,value : int):
+	var label = Label.new()
+	label.text = str(value)
+	label.add_theme_font_size_override("font_size", 62)
+	label.add_theme_constant_override("outline_size", 20)  
+	var global_position_parent = label_base.get_global_position()
+	var t = create_tween()
+	if (value >0):
+		label.global_position = global_position_parent + Vector2(0,-20)
+		label.add_theme_color_override("font_color",  Color(0, 1, 0)) # vert
+		label.add_theme_color_override("outline_color",  Color(0, 1, 0))
+		add_child(label)
+		# bouger le label feedbak ver le haut
+		t.tween_property(label, "position", label.position + Vector2(0, -80), 1) \
+			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		resources_more.play()
+	else:
+		label.global_position = global_position_parent + Vector2(0,20)
+		label.add_theme_color_override("font_color",  Color(1, 0, 0)) #rouge
+		label.add_theme_color_override("outline_color",  Color(1, 0, 0))
+		add_child(label)
+		# bouger le label feedbak ver le bas
+		t.tween_property(label, "position", label.position + Vector2(0, +80), 1) \
+			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		resources_less.play()
+	# faire disparaitre
+	t.parallel().tween_property(label, "modulate:a", 0.0, 0.8)
+	# supprimer
+	await t.finished
+	label.queue_free()
 func _on_retry_button_button_down() -> void:
 	get_tree().reload_current_scene()
 
