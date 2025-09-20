@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=17 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://csnuoqgcgs0iu" path="res://Assets/universe_gwj_85.png" id="2_jjvhh"]
@@ -14,7 +14,13 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_344ge"]
 curve = SubResource("Curve_6bp64")
 
+[sub_resource type="Curve" id="Curve_21xkr"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_21xkr"]
+curve = SubResource("Curve_21xkr")
 
 [sub_resource type="Curve" id="Curve_344ge"]
 _limits = [-1.0, 1.0, 0.0, 1.0]
