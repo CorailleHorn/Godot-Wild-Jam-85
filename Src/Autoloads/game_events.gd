@@ -3,6 +3,7 @@ extends Node
 signal buy_planet(market_slot: int, planet: PlanetResource, position: Vector2)
 signal add_new_market_item(market_slot: int)
 signal new_turn(turn_number: int)
+signal end_game(win: bool)
 
 # Signaux pour mettre à jour l'UI
 signal update_caillou(value: int)

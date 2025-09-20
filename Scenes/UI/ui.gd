@@ -30,6 +30,7 @@ func _ready() -> void:
 	GAME_EVENTS.update_caillou.connect(_on_update_caillou)
 	GAME_EVENTS.update_flotte.connect(_on_update_flotte)
 	GAME_EVENTS.update_gaz.connect(_on_update_gaz)
+	GAME_EVENTS.end_game.connect(_on_GAME_EVENTS_end_game)
 	
 func can_afford(planet: PlanetResource) -> bool:
 	return main_node.caillou >= planet.cost_caillou &&  main_node.gaz >= planet.cost_gaz &&  main_node.flotte >= planet.cost_flotte
@@ -43,8 +44,26 @@ func get_next_market_item() -> PlanetResource:
 	else:
 		return null
 
+func show_black_veil() -> void:
+	$BlackVeil.visible = true
+	var fade_tween = get_tree().create_tween()
+	fade_tween.tween_property($BlackVeil, "color:a", 0.5, 0.2)
+	
+func check_end_game_conditions() -> void:
+	var null_count: int = 0
+	for i in range(1,4):
+		var planet = get_node("Market/MarketItem" + str(i)).planet
+		if(planet != null):
+			if(can_afford(planet)):
+				return
+		else:
+			null_count+=1
+	GAME_EVENTS.end_game.emit(null_count == 3)
+
 func _on_GAME_EVENTS_add_new_market_item(market_slot: int) -> void:
 	get_node("Market/MarketItem" + str(market_slot)).set_planet(get_next_market_item())
+	check_end_game_conditions()
+	
 
 func _on_update_caillou(value:int):
 	var dif = value - int(label_caillou.text) 
@@ -117,3 +136,14 @@ func resources_update_feedback(label_base: Label,value : int):
 	# supprimer
 	await t.finished
 	label.queue_free()
+func _on_retry_button_button_down() -> void:
+	get_tree().reload_current_scene()
+
+func _on_back_2_menu_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	
+func _on_GAME_EVENTS_end_game(win: bool) -> void:
+	$FinalBox.visible = true
+	$FinalBox/LabelYouWin.visible = win
+	$FinalBox/LabelYouLose.visible = !win
+	show_black_veil()
