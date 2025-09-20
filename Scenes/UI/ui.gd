@@ -136,6 +136,7 @@ func resources_update_feedback(label_base: Label,value : int):
 	# supprimer
 	await t.finished
 	label.queue_free()
+
 func _on_retry_button_button_down() -> void:
 	get_tree().reload_current_scene()
 

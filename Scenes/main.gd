@@ -20,6 +20,9 @@ extends Node2D
 @export var gaz_par_tour: int = 2
 @export var flotte_par_tour: int = 1
 
+const STARS = preload("res://Assets/particules/stars.png")
+const SPAWN_PARTICULES = preload("res://Scenes/elements/spawn_particules.tscn")
+
 @onready var camera_2D = $Camera2D
 
 var turn_number: int = 0 :
@@ -53,8 +56,8 @@ func _on_GAME_EVENTS_buy_planet(market_slot: int, planet: PlanetResource, positi
 	new_planet.texture = planet.image
 	new_planet.global_position = position
 	add_child(new_planet)
-	# TODO:anim : tween + sound
-	
+	# animation apparition
+	spawn_planet(new_planet)
 	
 	# apply cost
 	caillou -= planet.cost_caillou
@@ -78,3 +81,14 @@ func apply_effect() -> void:
 	caillou += caillou_par_tour
 	gaz += gaz_par_tour
 	flotte += flotte_par_tour
+
+func spawn_planet(planet: Sprite2D):
+	var particules = SPAWN_PARTICULES.instantiate()
+	add_child(particules)
+	particules.global_position = planet.get_position()
+	planet.scale = Vector2(0.4, 0.4)
+	planet.modulate.a = 0
+	var t = create_tween()
+	particules.get_children()[0].emitting = true
+	t.tween_property(planet, "scale", Vector2(1, 1), 0.6)
+	t.parallel().tween_property(planet, "modulate:a", 1.0, 0.6)

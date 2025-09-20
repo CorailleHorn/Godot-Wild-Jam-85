@@ -35,7 +35,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_636u5")
-metadata/_edit_lock_ = true
 
 [node name="MarketBackground" type="TextureRect" parent="UI"]
 layout_mode = 1
@@ -142,13 +141,14 @@ vertical_alignment = 1
 [node name="QuestBar" type="Control" parent="UI"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
-anchor_left = 0.501042
+anchor_left = 0.464063
 anchor_top = 0.0037037
-anchor_right = 0.866
+anchor_right = 0.829021
 anchor_bottom = 0.037963
 offset_right = -0.720093
 offset_bottom = 200.0
 grow_horizontal = 0
+scale = Vector2(1.04, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="UI/QuestBar"]
@@ -158,29 +158,80 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -339.0
+offset_left = -425.0
 offset_top = -55.5
-offset_right = 339.0
+offset_right = 253.0
 offset_bottom = 55.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.23538, 1)
 texture = ExtResource("7_jevvu")
 
-[node name="Label" type="Label" parent="UI/QuestBar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -316.5
-offset_top = -38.5
-offset_right = 316.5
-offset_bottom = 38.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Resources" type="GridContainer" parent="UI/QuestBar"]
+offset_left = -27.8853
+offset_top = 89.0
+offset_right = 715.115
+offset_bottom = 153.0
+columns = 10
+
+[node name="Label" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Add 3 planets to expand your universe."
+text = "Next turn in  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextTurns" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "planets:  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caillou" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("3_b83rk")
+stretch_mode = 2
+
+[node name="NextCaillou" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+theme = SubResource("Theme_b83rk")
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gaz" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("5_7tgkj")
+stretch_mode = 2
+
+[node name="NextGaz" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flotte" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("6_jevvu")
+stretch_mode = 2
+
+[node name="NextFlotte" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -393,6 +444,12 @@ max_timer = 2.0
 [connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_exited"]
 [connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_entered"]
 [connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_exited"]
 [connection signal="button_down" from="UI/Setting/setting_btn" to="UI" method="_on_setting_btn_button_down"]
 [connection signal="button_down" from="UI/FinalBox/RetryButton" to="UI" method="_on_retry_button_button_down"]
 [connection signal="button_down" from="UI/FinalBox/Back2MenuButton" to="UI" method="_on_back_2_menu_button_button_down"]
