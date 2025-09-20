@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://coxtaamc2uajc"]
+[gd_scene load_steps=20 format=3 uid="uid://coxtaamc2uajc"]
 
 [ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
 [ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
@@ -13,8 +13,10 @@
 [ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
 [ext_resource type="Texture2D" uid="uid://bipxd6g30j33i" path="res://Assets/UI/control_tuto.png" id="12_u6hof"]
 [ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="13_thdbn"]
+[ext_resource type="AudioStream" uid="uid://b2dq1t0iqjep7" path="res://Assets/sounds/resource_more.mp3" id="14_813c4"]
 [ext_resource type="Texture2D" uid="uid://cyhby5ro6t02n" path="res://Assets/UI/square_background.png" id="14_jeqmb"]
 [ext_resource type="PackedScene" uid="uid://bynffjdnpxtfc" path="res://Scenes/elements/universe_stars.tscn" id="15_2yjmo"]
+[ext_resource type="AudioStream" uid="uid://bdg7gcajh0glf" path="res://Assets/sounds/resource_less.mp3" id="15_jlkmm"]
 
 [sub_resource type="Theme" id="Theme_b83rk"]
 
@@ -168,11 +170,16 @@ scale = Vector2(1.23538, 1)
 texture = ExtResource("7_jevvu")
 
 [node name="Resources" type="GridContainer" parent="UI/QuestBar"]
-layout_mode = 0
-offset_left = -27.8853
-offset_top = 89.0
-offset_right = 715.115
-offset_bottom = 153.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.5
+anchor_right = 0.491
+anchor_bottom = 0.5
+offset_left = -371.7
+offset_top = -29.5
+offset_right = 371.3
+offset_bottom = 34.5
 columns = 10
 
 [node name="Label" type="Label" parent="UI/QuestBar/Resources"]
@@ -327,8 +334,10 @@ stretch_mode = 2
 stream = ExtResource("13_thdbn")
 
 [node name="ResourcesMore" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("14_813c4")
 
 [node name="ResourcesLess" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("15_jlkmm")
 
 [node name="BlackVeil" type="ColorRect" parent="UI"]
 visible = false

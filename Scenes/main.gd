@@ -22,6 +22,7 @@ extends Node2D
 
 const STARS = preload("res://Assets/particules/stars.png")
 const SPAWN_PARTICULES = preload("res://Scenes/elements/spawn_particules.tscn")
+@onready var sound_new_planet: AudioStreamPlayer = $NewPlanet
 
 @onready var camera_2D = $Camera2D
 
@@ -40,6 +41,7 @@ var placed_planet: int = 0 :
 			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	randomize()
 	caillou = caillou_par_tour
 	gaz = gaz_par_tour
 	flotte = flotte_par_tour
@@ -92,3 +94,20 @@ func spawn_planet(planet: Sprite2D):
 	particules.get_children()[0].emitting = true
 	t.tween_property(planet, "scale", Vector2(1, 1), 0.6)
 	t.parallel().tween_property(planet, "modulate:a", 1.0, 0.6)
+	_play_sound_new_planet()
+
+func _play_sound_new_planet():
+	var x = randi_range(1, 3)
+	match x:
+		1:
+			sound_new_planet.play(0.4)
+			await get_tree().create_timer(2).timeout
+			sound_new_planet.stop()
+		2:
+			sound_new_planet.play(3.2)
+			await get_tree().create_timer(2).timeout
+			sound_new_planet.stop()
+		_:
+			sound_new_planet.play(11.4)
+			await get_tree().create_timer(2).timeout
+			sound_new_planet.stop()

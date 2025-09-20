@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=22 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://clhx3lkuoemju" path="res://Assets/universe_gwj_85_naked.png" id="2_hptm8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cy0f40pbobivg" path="res://Assets/particules/universe_particule_blue.png" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dmxpwcrj5jqyl" path="res://Assets/particules/universe_particule_white.png" id="9_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://c1wuirmapm0vd" path="res://Assets/particules/universe_particule_pink.png" id="10_6iyac"]
+[ext_resource type="AudioStream" uid="uid://or5y01mlhkmk" path="res://Assets/sounds/bunch_planet_sounds.mp3" id="11_d1ilt"]
 
 [sub_resource type="Curve" id="Curve_6bp64"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.500844), 0.0, 0.0, 0, 0]
@@ -381,3 +382,6 @@ position = Vector2(2186, -259)
 scale = Vector2(4.2984, 5.27988)
 texture = ExtResource("10_6iyac")
 anim = "scale"
+
+[node name="NewPlanet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_d1ilt")

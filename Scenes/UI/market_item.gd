@@ -85,22 +85,17 @@ func _on_button_button_up() -> void:
 	
 func cannot_afford(planet: PlanetResource) -> bool:
 	return main_node.caillou < planet.cost_caillou ||  main_node.gaz < planet.cost_gaz ||  main_node.flotte < planet.cost_flotte
-	
+
 
 func _on_mouse_entered() -> void:
 	if(planet == null):
 		return
-	elif(cannot_afford(planet)):
-		GAME_EVENTS.show_tooltips.emit("Not enough resources",true)
-	else:
+	elif(!cannot_afford(planet)):
 		$background.texture = texture_hover
-	
 
 func _on_mouse_exited() -> void:
 	if(planet == null):
 		return
-	elif(cannot_afford(planet)):
-		GAME_EVENTS.show_tooltips.emit("Not enough resources",false)
 	$background.texture = texture_normal
 
 func _play_drag_planet():
@@ -119,4 +114,15 @@ func _play_drag_planet():
 			drag_planet.play(18.8)
 			await get_tree().create_timer(1.2).timeout
 			drag_planet.stop()
-	
+
+func _on_button_mouse_entered() -> void:
+	if(planet == null):
+		return
+	elif(cannot_afford(planet)):
+		GAME_EVENTS.show_tooltips.emit("Not enough resources",true)
+
+func _on_button_mouse_exited() -> void:
+	if(planet == null):
+		return
+	elif(cannot_afford(planet)):
+		GAME_EVENTS.show_tooltips.emit("Not enough resources",false)

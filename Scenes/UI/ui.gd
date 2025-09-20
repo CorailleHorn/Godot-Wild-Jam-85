@@ -117,6 +117,8 @@ func _on_flotte_mouse_exited() -> void:
 	GAME_EVENTS.show_tooltips.emit("Liquid",false)
 
 func resources_update_feedback(label_base: Label,value : int):
+	if (label_base.get_global_position() == Vector2(171.0, 110.0)):
+		return
 	var label = Label.new()
 	label.text = str(value)
 	label.add_theme_font_size_override("font_size", 62)
@@ -140,7 +142,7 @@ func resources_update_feedback(label_base: Label,value : int):
 		# bouger le label feedbak ver le bas
 		t.tween_property(label, "position", label.position + Vector2(0, +80), 1) \
 			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		resources_less.play()
+		
 	# faire disparaitre
 	t.parallel().tween_property(label, "modulate:a", 0.0, 0.8)
 	# supprimer
