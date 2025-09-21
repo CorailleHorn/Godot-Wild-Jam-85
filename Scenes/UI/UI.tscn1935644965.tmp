@@ -1,0 +1,465 @@
+[gd_scene load_steps=20 format=3 uid="uid://coxtaamc2uajc"]
+
+[ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
+[ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
+[ext_resource type="Texture2D" uid="uid://c2dadywp4v7rv" path="res://Assets/UI/market_background.png" id="2_8wlyu"]
+[ext_resource type="Texture2D" uid="uid://c6f1e3j7bcdua" path="res://Assets/resources/resource_caillou.png" id="3_b83rk"]
+[ext_resource type="Texture2D" uid="uid://bosfg1t8b0al4" path="res://Assets/UI/resource_background.png" id="4_oqha6"]
+[ext_resource type="Texture2D" uid="uid://cb4htkbjfcrwr" path="res://Assets/resources/resource_gaz.png" id="5_7tgkj"]
+[ext_resource type="Texture2D" uid="uid://b27dc3c10rved" path="res://Assets/resources/resource_flotte.png" id="6_jevvu"]
+[ext_resource type="Texture2D" uid="uid://cmh1vrl1ms3td" path="res://Assets/UI/quest_background.png" id="7_jevvu"]
+[ext_resource type="Texture2D" uid="uid://x3bmi3bcrh11" path="res://Assets/UI/icone_replay.png" id="9_u6hof"]
+[ext_resource type="Texture2D" uid="uid://d1xyq5brd8hoi" path="res://Assets/UI/tooltips_bakcground.png" id="10_nqsl3"]
+[ext_resource type="Script" uid="uid://dp001vvkvwj41" path="res://Scenes/UI/tooltips.gd" id="11_u6hof"]
+[ext_resource type="Texture2D" uid="uid://bipxd6g30j33i" path="res://Assets/UI/control_tuto.png" id="12_u6hof"]
+[ext_resource type="AudioStream" uid="uid://2hr57kxw1xge" path="res://Assets/sounds/btn_clic.mp3" id="13_thdbn"]
+[ext_resource type="AudioStream" uid="uid://b2dq1t0iqjep7" path="res://Assets/sounds/resource_more.mp3" id="14_813c4"]
+[ext_resource type="Texture2D" uid="uid://cyhby5ro6t02n" path="res://Assets/UI/square_background.png" id="14_jeqmb"]
+[ext_resource type="PackedScene" uid="uid://bynffjdnpxtfc" path="res://Scenes/elements/universe_stars.tscn" id="15_2yjmo"]
+[ext_resource type="AudioStream" uid="uid://bdg7gcajh0glf" path="res://Assets/sounds/resource_less.mp3" id="15_jlkmm"]
+
+[sub_resource type="Theme" id="Theme_b83rk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thdbn"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("10_nqsl3")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_636u5")
+
+[node name="MarketBackground" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -551.5
+offset_top = -352.0
+offset_right = 551.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_8wlyu")
+
+[node name="Market" type="GridContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -320.0
+offset_right = 454.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="MarketItem1" parent="UI/Market" instance=ExtResource("1_s86y4")]
+layout_mode = 2
+market_slot = 1
+
+[node name="MarketItem2" parent="UI/Market" instance=ExtResource("1_s86y4")]
+layout_mode = 2
+market_slot = 2
+
+[node name="MarketItem3" parent="UI/Market" instance=ExtResource("1_s86y4")]
+layout_mode = 2
+market_slot = 3
+
+[node name="ResourcesBar" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 666.0
+offset_bottom = 297.0
+
+[node name="Background" type="TextureRect" parent="UI/ResourcesBar"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 68.0
+offset_right = 662.0
+offset_bottom = 214.0
+texture = ExtResource("4_oqha6")
+
+[node name="Resources" type="GridContainer" parent="UI/ResourcesBar"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 110.0
+offset_right = 565.0
+offset_bottom = 174.0
+columns = 6
+
+[node name="Caillou" type="TextureRect" parent="UI/ResourcesBar/Resources"]
+layout_mode = 2
+texture = ExtResource("3_b83rk")
+stretch_mode = 2
+
+[node name="ValueCaillou" type="Label" parent="UI/ResourcesBar/Resources"]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+theme = SubResource("Theme_b83rk")
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gaz" type="TextureRect" parent="UI/ResourcesBar/Resources"]
+layout_mode = 2
+texture = ExtResource("5_7tgkj")
+stretch_mode = 2
+
+[node name="ValueGaz" type="Label" parent="UI/ResourcesBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flotte" type="TextureRect" parent="UI/ResourcesBar/Resources"]
+layout_mode = 2
+texture = ExtResource("6_jevvu")
+stretch_mode = 2
+
+[node name="ValueFlotte" type="Label" parent="UI/ResourcesBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestBar" type="Control" parent="UI"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchor_left = 0.464063
+anchor_top = 0.0037037
+anchor_right = 0.829021
+anchor_bottom = 0.037963
+offset_right = -0.720093
+offset_bottom = 200.0
+grow_horizontal = 0
+scale = Vector2(1.04, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="UI/QuestBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -55.5
+offset_right = 253.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.23538, 1)
+texture = ExtResource("7_jevvu")
+
+[node name="Resources" type="GridContainer" parent="UI/QuestBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491
+anchor_top = 0.5
+anchor_right = 0.491
+anchor_bottom = 0.5
+offset_left = -371.7
+offset_top = -29.5
+offset_right = 371.3
+offset_bottom = 34.5
+columns = 10
+
+[node name="Label" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Next turn in "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextTurns" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " planets:  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caillou" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("3_b83rk")
+stretch_mode = 2
+
+[node name="NextCaillou" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+theme = SubResource("Theme_b83rk")
+theme_override_font_sizes/font_size = 42
+text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gaz" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("5_7tgkj")
+stretch_mode = 2
+
+[node name="NextGaz" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flotte" type="TextureRect" parent="UI/QuestBar/Resources"]
+layout_mode = 2
+texture = ExtResource("6_jevvu")
+stretch_mode = 2
+
+[node name="NextFlotte" type="Label" parent="UI/QuestBar/Resources"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Setting" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -212.0
+offset_bottom = 232.0
+grow_horizontal = 0
+
+[node name="Background" type="TextureRect" parent="UI/Setting"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.336
+anchor_right = 0.175
+anchor_bottom = 0.336
+offset_left = -0.100002
+offset_top = 0.0479965
+offset_right = 121.9
+offset_bottom = 113.048
+texture = ExtResource("7_jevvu")
+expand_mode = 1
+
+[node name="IconSetting" type="TextureRect" parent="UI/Setting"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209
+anchor_top = 0.379
+anchor_right = 0.209
+anchor_bottom = 0.379
+offset_left = 23.692
+offset_top = 18.072
+offset_right = 88.692
+offset_bottom = 74.072
+texture = ExtResource("9_u6hof")
+expand_mode = 1
+
+[node name="setting_btn" type="Button" parent="UI/Setting"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.204
+anchor_top = 0.387
+anchor_right = 0.204
+anchor_bottom = 0.387
+offset_left = 1.752
+offset_top = 1.216
+offset_right = 111.752
+offset_bottom = 88.216
+
+[node name="Tooltips" type="PanelContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 41.0
+scale = Vector2(2.09258, 2.09258)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_thdbn")
+script = ExtResource("11_u6hof")
+
+[node name="Content" type="RichTextLabel" parent="UI/Tooltips"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.97, 0.97, 0.97, 1)
+theme_override_constants/outline_size = 1
+bbcode_enabled = true
+text = "here is the tooltips"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ControlTutorial" type="Control" parent="UI"]
+anchors_preset = 0
+offset_top = 284.0
+offset_right = 303.0
+offset_bottom = 436.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControlTutorial"]
+layout_mode = 0
+offset_left = 90.0
+offset_right = 819.0
+offset_bottom = 444.0
+scale = Vector2(0.383844, 0.383844)
+texture = ExtResource("12_u6hof")
+stretch_mode = 2
+
+[node name="BtnClic" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("13_thdbn")
+
+[node name="ResourcesMore" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("14_813c4")
+
+[node name="ResourcesLess" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("15_jlkmm")
+
+[node name="BlackVeil" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="FinalBox" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/FinalBox"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 160.0
+offset_right = -467.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/FinalBox/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("14_jeqmb")
+
+[node name="LabelYouWin" type="Label" parent="UI/FinalBox"]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 371.0
+offset_right = 1080.0
+offset_bottom = 461.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Well done"
+
+[node name="LabelYouLose" type="Label" parent="UI/FinalBox"]
+visible = false
+layout_mode = 0
+offset_left = 822.0
+offset_top = 367.0
+offset_right = 1144.0
+offset_bottom = 457.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Game over :'("
+
+[node name="RetryButton" type="Button" parent="UI/FinalBox"]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 509.0
+offset_right = 1023.0
+offset_bottom = 553.0
+theme_override_font_sizes/font_size = 35
+text = "Retry"
+
+[node name="Back2MenuButton" type="Button" parent="UI/FinalBox"]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 621.0
+offset_right = 1081.0
+offset_bottom = 665.0
+theme_override_font_sizes/font_size = 35
+text = "Go to Menu"
+
+[node name="Node2D" type="Node2D" parent="UI/FinalBox"]
+
+[node name="UniverseStars" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(760, 487)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars2" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(710, 395)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars3" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1291, 419)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars4" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1168, 345)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars5" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(1182, 434)
+min_timer = 1.0
+max_timer = 2.0
+
+[node name="UniverseStars6" parent="UI/FinalBox/Node2D" instance=ExtResource("15_2yjmo")]
+position = Vector2(805, 379)
+min_timer = 1.0
+max_timer = 2.0
+
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_exited"]
+[connection signal="mouse_entered" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_entered"]
+[connection signal="mouse_exited" from="UI/ResourcesBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Caillou" to="UI" method="_on_caillou_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Gaz" to="UI" method="_on_gaz_mouse_exited"]
+[connection signal="mouse_entered" from="UI/QuestBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_entered"]
+[connection signal="mouse_exited" from="UI/QuestBar/Resources/Flotte" to="UI" method="_on_flotte_mouse_exited"]
+[connection signal="button_down" from="UI/Setting/setting_btn" to="UI" method="_on_setting_btn_button_down"]
+[connection signal="button_down" from="UI/FinalBox/RetryButton" to="UI" method="_on_retry_button_button_down"]
+[connection signal="button_down" from="UI/FinalBox/Back2MenuButton" to="UI" method="_on_back_2_menu_button_button_down"]

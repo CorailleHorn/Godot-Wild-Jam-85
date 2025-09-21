@@ -35,11 +35,20 @@ var main_node: Main = null
 func _ready() -> void:
 	GAME_EVENTS.add_new_market_item.connect(_on_GAME_EVENTS_add_new_market_item)
 	main_node = get_node("/root/Main")
-	await main_node
+	await main_node.ready
 	# Set market items
 	$Market/MarketItem1.set_planet(get_next_market_item())
 	$Market/MarketItem2.set_planet(get_next_market_item())
 	$Market/MarketItem3.set_planet(get_next_market_item())
+	
+	# Set UI values 
+	label_caillou.text = str(main_node.caillou)
+	label_flotte.text = str(main_node.flotte)
+	label_gaz.text = str(main_node.gaz)
+	
+	label_caillou_par_tour.text = "+" + str(main_node.caillou_par_tour)
+	label_flotte_par_tour.text = "+" + str(main_node.flotte_par_tour)
+	label_gaz_par_tour.text = "+" + str(main_node.gaz_par_tour)
 
 	GAME_EVENTS.update_caillou.connect(_on_update_caillou)
 	GAME_EVENTS.update_flotte.connect(_on_update_flotte)

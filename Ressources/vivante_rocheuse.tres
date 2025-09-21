@@ -7,10 +7,10 @@
 script = ExtResource("1_5qs5v")
 name = "Habitable Rocky"
 image = ExtResource("1_jgfav")
-cost_caillou = 2
-cost_gaz = 1
+cost_caillou = 3
+cost_gaz = 2
 cost_flotte = 1
-effect_caillou = 2
+effect_caillou = 1
 effect_gaz = 2
 effect_flotte = 0
 metadata/_custom_type_script = "uid://c544ak0vrxto3"

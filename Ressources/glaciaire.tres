@@ -12,5 +12,5 @@ cost_gaz = 0
 cost_flotte = 2
 effect_caillou = 1
 effect_gaz = 0
-effect_flotte = 1
+effect_flotte = 0
 metadata/_custom_type_script = "uid://c544ak0vrxto3"

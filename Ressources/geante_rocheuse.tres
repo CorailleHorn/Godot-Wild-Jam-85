@@ -7,7 +7,7 @@
 script = ExtResource("1_7n82u")
 name = "Rocky Giant"
 image = ExtResource("1_hqj4k")
-cost_caillou = 4
+cost_caillou = 5
 cost_gaz = 0
 cost_flotte = 0
 effect_caillou = 4
