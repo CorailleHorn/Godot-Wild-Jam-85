@@ -63,8 +63,12 @@ func _on_button_button_down() -> void:
 	dragging = true
 	dragged_object = TextureRect.new()
 	dragged_object.texture = planet.image
-	dragged_object.position = $Center/LaPlanete.position
-	$Center.add_child(dragged_object)
+	var texture_size: Vector2 = dragged_object.texture.get_size()
+	if(texture_size != Vector2(128,128)):
+		dragged_object.position = get_local_mouse_position() - texture_size/2
+	else:
+		dragged_object.position = $Center.position
+	add_child(dragged_object)
 	offset = get_global_mouse_position() - dragged_object.position
 	_play_drag_planet()
 
@@ -75,12 +79,12 @@ func _on_button_button_up() -> void:
 	dragging = false
 	# si on achète
 	if(!rect_market.has_point(get_global_mouse_position())):
-		GAME_EVENTS.buy_planet.emit(market_slot, planet, get_viewport().get_camera_2d().get_target_position() + dragged_object.get_screen_position() + Vector2(64,64))
+		GAME_EVENTS.buy_planet.emit(market_slot, planet, get_viewport().get_camera_2d().get_target_position() + dragged_object.get_screen_position() + Vector2(planet.image.get_width()/2, planet.image.get_height()/2))
 		print("bought")
 	# si on achète pas
 	else:
 		print("not bought")
-	$Center.remove_child(dragged_object)
+	remove_child(dragged_object)
 	dragged_object.queue_free()
 	
 func cannot_afford(planet: PlanetResource) -> bool:

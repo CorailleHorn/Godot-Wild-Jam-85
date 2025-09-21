@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dssnvfa27bsal"]
+[gd_scene load_steps=22 format=3 uid="uid://dssnvfa27bsal"]
 
 [ext_resource type="Script" uid="uid://bx6nhogtqe1l0" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://sewyn4r22ela" path="res://Assets/bigger_universe_naked.png" id="2_6iyac"]
-[ext_resource type="Texture2D" uid="uid://clhx3lkuoemju" path="res://Assets/universe_gwj_85_naked.png" id="2_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="3_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://rh66khwjaug8" path="res://Assets/particules/part_sun_1.png" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://coxtaamc2uajc" path="res://Scenes/UI/UI.tscn" id="5_kry3j"]
@@ -85,20 +84,14 @@ scale = Vector2(1.76852, 1.76852)
 texture = ExtResource("2_6iyac")
 metadata/_edit_lock_ = true
 
-[node name="SpaceBackground2" type="Sprite2D" parent="."]
-position = Vector2(822, 492)
-scale = Vector2(1.76852, 1.76852)
-texture = ExtResource("2_hptm8")
-metadata/_edit_lock_ = true
-
 [node name="CanvasLayer" parent="." instance=ExtResource("5_kry3j")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-limit_left = -800
-limit_top = -700
-limit_right = 2320
-limit_bottom = 1650
+limit_left = -2361
+limit_top = -1453
+limit_right = 4005
+limit_bottom = 2437
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
@@ -551,3 +544,8 @@ anim = "scale"
 
 [node name="NewPlanet" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_d1ilt")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+position = Vector2(-2362.2, 0)
+default_color = Color(1, 0, 0, 1)
