@@ -7,10 +7,10 @@
 script = ExtResource("1_e6mad")
 name = "Habitable Oceanic"
 image = ExtResource("1_cam84")
-cost_caillou = 0
-cost_gaz = 1
+cost_caillou = 1
+cost_gaz = 2
 cost_flotte = 3
 effect_caillou = 0
 effect_gaz = 2
-effect_flotte = 2
+effect_flotte = 1
 metadata/_custom_type_script = "uid://c544ak0vrxto3"

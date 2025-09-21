@@ -7,10 +7,10 @@
 script = ExtResource("1_3gwd3")
 name = "Magmatic"
 image = ExtResource("1_7qhk5")
-cost_caillou = 2
+cost_caillou = 1
 cost_gaz = 0
-cost_flotte = 0
-effect_caillou = 1
-effect_gaz = 0
-effect_flotte = 1
+cost_flotte = 1
+effect_caillou = 0
+effect_gaz = 1
+effect_flotte = 0
 metadata/_custom_type_script = "uid://c544ak0vrxto3"
