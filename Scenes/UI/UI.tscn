@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://coxtaamc2uajc"]
+[gd_scene load_steps=21 format=3 uid="uid://coxtaamc2uajc"]
 
 [ext_resource type="Script" uid="uid://drmuc0h0ojcvg" path="res://Scenes/UI/ui.gd" id="1_636u5"]
 [ext_resource type="PackedScene" uid="uid://jphrdc4g8of5" path="res://Scenes/UI/market_item.tscn" id="1_s86y4"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cyhby5ro6t02n" path="res://Assets/UI/square_background.png" id="14_jeqmb"]
 [ext_resource type="PackedScene" uid="uid://bynffjdnpxtfc" path="res://Scenes/elements/universe_stars.tscn" id="15_2yjmo"]
 [ext_resource type="AudioStream" uid="uid://bdg7gcajh0glf" path="res://Assets/sounds/resource_less.mp3" id="15_jlkmm"]
+[ext_resource type="PackedScene" uid="uid://dl2uxfwseys1r" path="res://Scenes/UI/button.tscn" id="17_jlkmm"]
 
 [sub_resource type="Theme" id="Theme_b83rk"]
 
@@ -377,44 +378,51 @@ texture = ExtResource("14_jeqmb")
 
 [node name="LabelYouWin" type="Label" parent="UI/FinalBox"]
 layout_mode = 0
-offset_left = 862.0
-offset_top = 371.0
-offset_right = 1080.0
-offset_bottom = 461.0
+anchor_left = 0.448958
+anchor_top = 0.343519
+anchor_right = 0.576563
+anchor_bottom = 0.426852
+offset_right = -27.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "Well done"
+metadata/_edit_use_anchors_ = true
 
 [node name="LabelYouLose" type="Label" parent="UI/FinalBox"]
 visible = false
 layout_mode = 0
-offset_left = 822.0
-offset_top = 367.0
-offset_right = 1144.0
-offset_bottom = 457.0
+anchor_left = 0.428125
+anchor_top = 0.339815
+anchor_right = 0.595833
+anchor_bottom = 0.423148
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "Game over :'("
+metadata/_edit_use_anchors_ = true
 
-[node name="RetryButton" type="Button" parent="UI/FinalBox"]
+[node name="RetryButton" parent="UI/FinalBox" instance=ExtResource("17_jlkmm")]
 layout_mode = 0
-offset_left = 930.0
-offset_top = 509.0
-offset_right = 1023.0
-offset_bottom = 553.0
-theme_override_font_sizes/font_size = 35
+anchor_left = 0.461458
+anchor_top = 0.465741
+anchor_right = 0.556771
+anchor_bottom = 0.518519
+offset_right = 0.0
+offset_bottom = 0.0
 text = "Retry"
+metadata/_edit_use_anchors_ = true
 
-[node name="Back2MenuButton" type="Button" parent="UI/FinalBox"]
+[node name="Back2MenuButton" parent="UI/FinalBox" instance=ExtResource("17_jlkmm")]
 layout_mode = 0
-offset_left = 889.0
-offset_top = 621.0
-offset_right = 1081.0
-offset_bottom = 665.0
-theme_override_font_sizes/font_size = 35
+anchor_left = 0.454688
+anchor_top = 0.568519
+anchor_right = 0.567187
+anchor_bottom = 0.621296
+offset_right = 0.0
+offset_bottom = 0.0
 text = "Go to Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="UI/FinalBox"]
 
