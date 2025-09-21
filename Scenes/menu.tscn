@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7udqhy65jfam"]
+[gd_scene load_steps=9 format=3 uid="uid://7udqhy65jfam"]
 
 [ext_resource type="PackedScene" uid="uid://dl2uxfwseys1r" path="res://Scenes/UI/button.tscn" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://cx5gl58xpp1c2" path="res://Scenes/menu.gd" id="1_xhh6f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="5_q3rjx"]
 [ext_resource type="Texture2D" uid="uid://bfclde4jlhft4" path="res://Assets/planetes/metalique.png" id="6_jsrd8"]
 [ext_resource type="Texture2D" uid="uid://c2101wnmny3km" path="res://Assets/planetes/moyenne_gazeuse.png" id="7_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://ca4plfsqtuohh" path="res://Assets/GWJ-Full-Logo-tag-4k (1).png" id="8_q3rjx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,6 +24,7 @@ offset_top = 2.0
 offset_right = 1920.0
 offset_bottom = 1082.0
 color = Color(0.054902, 0.0705882, 0.176471, 1)
+metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
@@ -49,10 +51,10 @@ text = "Play the game"
 
 [node name="Description" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 348.0
-offset_top = 603.0
-offset_right = 618.0
-offset_bottom = 762.0
+offset_left = 700.0
+offset_top = 590.0
+offset_right = 970.0
+offset_bottom = 749.0
 scale = Vector2(1.94973, 1.94973)
 bbcode_enabled = true
 text = "[b]Game for the Godot Wild Jam 85[/b]
@@ -61,15 +63,18 @@ by Coraille_Horn & Gigi.Lili
 
 Theme: Expansion
 Limitations: none used"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="theme" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 840.0
-offset_right = 2995.0
-offset_bottom = 1610.0
+offset_left = 308.667
+offset_top = 745.25
+offset_right = 2222.67
+offset_bottom = 1291.25
 scale = Vector2(0.178377, 0.178377)
 texture = ExtResource("3_jsrd8")
+expand_mode = 1
 
 [node name="planete" type="TextureRect" parent="."]
 layout_mode = 0
@@ -100,5 +105,10 @@ texture = ExtResource("6_jsrd8")
 position = Vector2(130, 115)
 scale = Vector2(2.11585, 2.11585)
 texture = ExtResource("7_wbdvm")
+
+[node name="Gwj-full-logo-tag-4k(1)" type="Sprite2D" parent="."]
+position = Vector2(470.667, 654.25)
+scale = Vector2(0.119333, 0.119333)
+texture = ExtResource("8_q3rjx")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
