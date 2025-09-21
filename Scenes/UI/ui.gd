@@ -8,6 +8,10 @@ extends Control
 @onready var label_gaz: Label = $ResourcesBar/Resources/ValueGaz
 @onready var label_flotte: Label = $ResourcesBar/Resources/ValueFlotte
 
+@onready var label_caillou_par_tour: Label = $QuestBar/Resources/NextCaillou
+@onready var label_gaz_par_tour: Label = $QuestBar/Resources/NextGaz
+@onready var label_flotte_par_tour: Label = $QuestBar/Resources/NextFlotte
+
 var planet_array = [
 	preload(PLANET_CONSTANTS.PetiteRocheuse),
 	preload(PLANET_CONSTANTS.PetiteGazeuse),
@@ -40,6 +44,10 @@ func _ready() -> void:
 	GAME_EVENTS.update_caillou.connect(_on_update_caillou)
 	GAME_EVENTS.update_flotte.connect(_on_update_flotte)
 	GAME_EVENTS.update_gaz.connect(_on_update_gaz)
+	GAME_EVENTS.update_caillou_par_tour.connect(_on_update_caillou_par_tour)
+	GAME_EVENTS.update_flotte_par_tour.connect(_on_update_flotte_par_tour)
+	GAME_EVENTS.update_gaz_par_tour.connect(_on_update_gaz_par_tour)
+	GAME_EVENTS.update_planet_remaining.connect(_on_GAME_EVENTS_update_planet_remaining)
 	GAME_EVENTS.end_game.connect(_on_GAME_EVENTS_end_game)
 	
 func can_afford(planet: PlanetResource) -> bool:
@@ -79,7 +87,7 @@ func _on_update_caillou(value:int):
 	var dif = value - int(label_caillou.text) 
 	if (dif != 0) :
 		# créer le label feedback + anim
-		resources_update_feedback(label_caillou,dif)	
+		resources_update_feedback(label_caillou,dif)
 	# update le label value
 	label_caillou.text = str(value)
 
@@ -87,7 +95,7 @@ func _on_update_flotte(value:int):
 	var dif = value - int(label_flotte.text) 
 	if (dif != 0) :
 		# créer le label feedback + anim
-		resources_update_feedback(label_flotte,dif)	
+		resources_update_feedback(label_flotte,dif)
 	# update le label value
 	label_flotte.text = str(value)
 
@@ -95,9 +103,34 @@ func _on_update_gaz(value:int):
 	var dif = value - int(label_gaz.text) 
 	if (dif != 0) :
 		# créer le label feedback + anim
-		resources_update_feedback(label_gaz,dif)	
+		resources_update_feedback(label_gaz,dif)
 	# update le label value
 	label_gaz.text = str(value)
+
+
+func _on_update_caillou_par_tour(value:int):
+	var dif = value - int(label_caillou_par_tour.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_caillou_par_tour,dif)
+	# update le label value
+	label_caillou_par_tour.text = "+" + str(value)
+
+func _on_update_flotte_par_tour(value:int):
+	var dif = value - int(label_flotte_par_tour.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_flotte_par_tour,dif)
+	# update le label value
+	label_flotte_par_tour.text = "+" + str(value)
+
+func _on_update_gaz_par_tour(value:int):
+	var dif = value - int(label_gaz_par_tour.text) 
+	if (dif != 0) :
+		# créer le label feedback + anim
+		resources_update_feedback(label_gaz_par_tour,dif)
+	# update le label value
+	label_gaz_par_tour.text = "+" + str(value)
 
 func _on_setting_btn_button_down() -> void:
 	btn_clic.play(0)
@@ -154,6 +187,9 @@ func _on_retry_button_button_down() -> void:
 
 func _on_back_2_menu_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	
+func _on_GAME_EVENTS_update_planet_remaining(value: int) -> void:
+	$QuestBar/Resources/NextTurns.text = str(value)
 	
 func _on_GAME_EVENTS_end_game(win: bool) -> void:
 	$FinalBox.visible = true
