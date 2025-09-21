@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjfthmmho1im" path="res://Assets/85-Theme.png" id="3_jsrd8"]
 [ext_resource type="Texture2D" uid="uid://llqyt6bkvl0q" path="res://Assets/planetes/petite_gazeuse.png" id="4_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="5_q3rjx"]
-[ext_resource type="Texture2D" uid="uid://dgrgnci3t6qgg" path="res://Assets/planetes/sun.png" id="6_6swd7"]
+[ext_resource type="Texture2D" uid="uid://bfclde4jlhft4" path="res://Assets/planetes/metalique.png" id="6_jsrd8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -34,7 +34,9 @@ scale = Vector2(7.01981, 7.01981)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 26
-text = "Universe Game"
+text = "MyCosmos"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StartButton" parent="." instance=ExtResource("1_1rerr")]
 layout_mode = 0
@@ -86,13 +88,12 @@ offset_bottom = 653.0
 texture = ExtResource("5_q3rjx")
 
 [node name="planete3" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 1548.0
-offset_top = 327.0
-offset_right = 2141.0
-offset_bottom = 920.0
+offset_left = 1578.0
+offset_top = 372.0
+offset_right = 2171.0
+offset_bottom = 965.0
 scale = Vector2(0.360002, 0.360002)
-texture = ExtResource("6_6swd7")
+texture = ExtResource("6_jsrd8")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
