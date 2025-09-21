@@ -134,3 +134,5 @@ stream = ExtResource("5_slgo4")
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="button_down" from="Center/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Center/Button" to="." method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Center/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Center/Button" to="." method="_on_button_mouse_exited"]
