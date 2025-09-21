@@ -63,8 +63,8 @@ func _on_button_button_down() -> void:
 	dragging = true
 	dragged_object = TextureRect.new()
 	dragged_object.texture = planet.image
-	dragged_object.position = $Center/LaPlanete.position
-	$Center.add_child(dragged_object)
+	dragged_object.position = $Center.position
+	add_child(dragged_object)
 	offset = get_global_mouse_position() - dragged_object.position
 	_play_drag_planet()
 
@@ -80,7 +80,7 @@ func _on_button_button_up() -> void:
 	# si on achète pas
 	else:
 		print("not bought")
-	$Center.remove_child(dragged_object)
+	remove_child(dragged_object)
 	dragged_object.queue_free()
 	
 func cannot_afford(planet: PlanetResource) -> bool:
