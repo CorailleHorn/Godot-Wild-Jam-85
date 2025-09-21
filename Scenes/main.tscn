@@ -121,7 +121,6 @@ process_material = SubResource("ParticleProcessMaterial_21xkr")
 
 [node name="Sun" type="Sprite2D" parent="SunGroup"]
 position = Vector2(948, 469)
-scale = Vector2(1.86904, 1.86904)
 texture = ExtResource("3_jjvhh")
 metadata/_edit_lock_ = true
 
