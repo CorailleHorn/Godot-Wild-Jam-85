@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlanetResource" load_steps=3 format=3 uid="uid://dkxoogkdx5hy2"]
 
-[ext_resource type="Texture2D" uid="uid://03kb1uv5vgg0" path="res://Assets/planetes/petite_rocheuse.png" id="1_4d2vx"]
+[ext_resource type="Texture2D" uid="uid://ddjwl1xddatrh" path="res://Assets/planetes/moyenne_rocheuse.png" id="1_4d2vx"]
 [ext_resource type="Script" uid="uid://c544ak0vrxto3" path="res://Src/planet_resource.gd" id="1_12bqj"]
 
 [resource]
