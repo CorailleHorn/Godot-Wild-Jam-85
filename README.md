@@ -13,7 +13,7 @@ Use arrows/keyboards to move around the universe.
 Manage your resources’ production to create a large variety of planets in your very own universe.
 ### 📝 Authors' Note
 
-Made in 30h during a week by 2 people.
+This game has been made for the [Godot Wild Jam 85](https://itch.io/jam/godot-wild-jam-85/rate/3896001) in 30h during a week by 2 people.
 
 "I discovered tween" - GigiLili 
 
