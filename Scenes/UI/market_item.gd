@@ -76,7 +76,7 @@ func _on_button_button_up() -> void:
 	dragging = false
 	# si on achète
 	if(!rect_market.has_point(get_global_mouse_position())):
-		var camera_top_left_position: Vector2 = get_viewport().get_camera_2d().get_target_position() - (Vector2(960, 540) * (Vector2.ONE/get_viewport().get_camera_2d().zoom))
+		var camera_top_left_position: Vector2 = get_viewport().get_camera_2d().get_target_position() - (get_viewport_rect().size/2) * (Vector2.ONE/get_viewport().get_camera_2d().zoom)
 		var screen_relative_dragged_object_position: Vector2 = (dragged_object.get_screen_position() + Vector2(planet.image.get_width()/2, planet.image.get_height()/2)) * (Vector2.ONE/get_viewport().get_camera_2d().zoom)
 		GAME_EVENTS.buy_planet.emit(market_slot, planet, camera_top_left_position + screen_relative_dragged_object_position)
 		print("bought")

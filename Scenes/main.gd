@@ -57,6 +57,7 @@ func _ready() -> void:
 	flotte = flotte_par_tour
 	GAME_EVENTS.buy_planet.connect(_on_GAME_EVENTS_buy_planet)
 	GAME_EVENTS.new_turn.connect(_on_GAME_EVENT_new_turn)
+	camera_2D.position = get_viewport_rect().size/2
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -64,7 +65,8 @@ func _physics_process(delta: float) -> void:
 	camera_2D.position += moving_direction * camera_speed * delta
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if(event.is_action_pressed("zoom_in")):
+	print(get_viewport_rect())
+	if(event.is_action_pressed("zoom_in")):	
 		if(camera_2D.zoom < Vector2(1.5, 1.5)):
 			camera_2D.zoom += Vector2(0.05, 0.05)
 	elif(event.is_action_pressed("zoom_out")):
