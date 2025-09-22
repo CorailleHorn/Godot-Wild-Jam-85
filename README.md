@@ -20,6 +20,8 @@ Made in 30h during a week by 2 people.
 "Actually, planets are not round 🤓" - Coraille
 ### 💕 Credits
 
-Dev, art and gd: us
+Dev, art and gd: [GigiLili](https://mariegigilili.itch.io/) & [Coraille_Horn](https://coraille-horn.itch.io/)
 
 Sounds & music: Pixabay
+
+Except for music, this game is under the Apache 2.0 License, so feel free to use, share and modify ;)
