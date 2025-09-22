@@ -57,11 +57,19 @@ func _ready() -> void:
 	flotte = flotte_par_tour
 	GAME_EVENTS.buy_planet.connect(_on_GAME_EVENTS_buy_planet)
 	GAME_EVENTS.new_turn.connect(_on_GAME_EVENT_new_turn)
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var moving_direction: Vector2 = Input.get_vector("go_left","go_right", "go_up", "go_down")
 	camera_2D.position += moving_direction * camera_speed * delta
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if(event.is_action_pressed("zoom_in")):
+		if(camera_2D.zoom < Vector2(1.5, 1.5)):
+			camera_2D.zoom += Vector2(0.05, 0.05)
+	elif(event.is_action_pressed("zoom_out")):
+		if(camera_2D.zoom > Vector2(0.35, 0.35)):
+			camera_2D.zoom -= Vector2(0.05, 0.05)
 
 func _on_GAME_EVENTS_buy_planet(market_slot: int, planet: PlanetResource, position: Vector2) -> void:
 	var new_planet = Sprite2D.new()

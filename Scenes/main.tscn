@@ -87,7 +87,8 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" parent="." instance=ExtResource("5_kry3j")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+position = Vector2(960, 540)
+zoom = Vector2(0.8, 0.8)
 limit_left = -2361
 limit_top = -1453
 limit_right = 4005
