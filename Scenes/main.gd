@@ -65,7 +65,6 @@ func _physics_process(delta: float) -> void:
 	camera_2D.position += moving_direction * camera_speed * delta
 	
 func _unhandled_input(event: InputEvent) -> void:
-	print(get_viewport_rect())
 	if(event.is_action_pressed("zoom_in")):	
 		if(camera_2D.zoom < Vector2(1.5, 1.5)):
 			camera_2D.zoom += Vector2(0.05, 0.05)

@@ -325,8 +325,8 @@ offset_bottom = 436.0
 [node name="TextureRect" type="TextureRect" parent="UI/ControlTutorial"]
 layout_mode = 0
 offset_left = 90.0
-offset_right = 819.0
-offset_bottom = 444.0
+offset_right = 889.0
+offset_bottom = 266.0
 scale = Vector2(0.383844, 0.383844)
 texture = ExtResource("12_u6hof")
 stretch_mode = 2
